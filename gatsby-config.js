@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://blog.yagijin.com",
     title: "blog",
   },
   plugins: [
@@ -20,7 +20,16 @@ module.exports = {
         icon: "src/images/icon.png",
       },
     },
-    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        extensions: [`.mdx`, `.md`],
+        defaultLayouts: {
+          blog: require.resolve("./src/components/BlogTemplate.js"),
+          default: require.resolve("./src/components/BlogTemplate.js"),
+        },
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
