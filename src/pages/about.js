@@ -8,7 +8,7 @@ const AboutPage = () => {
       <h1>このページはアバウトページです．</h1>
       <Link to="/">Home</Link>
     </main>
-  )
-}
+  );
+};
 
-export default AboutPage
+export default AboutPage;

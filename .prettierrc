@@ -1,0 +1,6 @@
+{
+  "doubleQuote": true,
+  "arrowParens": "always",
+  "semi": true,
+  "tabWidth": 2
+}

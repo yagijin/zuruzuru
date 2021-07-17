@@ -4,13 +4,13 @@ import { MDXProvider } from "@mdx-js/react";
 import Header from "./Header.js";
 import "../styles/blog-template.scss";
 
- const BlogTemplate = ({ children }) => (
+const BlogTemplate = ({ children }) => (
   <>
-    <Header/>
+    <Header />
     <main>
       <MDXProvider>{children}</MDXProvider>
-    </main>  
+    </main>
   </>
-)
+);
 
 export default BlogTemplate;
