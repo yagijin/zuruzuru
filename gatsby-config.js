@@ -18,6 +18,9 @@ module.exports = {
       resolve: "gatsby-plugin-manifest",
       options: {
         icon: "src/images/icon.png",
+        name: `ズルズル`,
+        start_url: `/`,
+        theme_color: `#698474`,
       },
     },
     {
@@ -28,6 +31,41 @@ module.exports = {
           blog: require.resolve("./src/components/BlogTemplate.js"),
           default: require.resolve("./src/components/BlogTemplate.js"),
         },
+        gatsbyRemarkPlugins: [
+          "gatsby-remark-numbered-footnotes",
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: { js: "javascript", ts: "typescript" },
+              showLineNumbers: true,
+              noInlineHighlight: false,
+              // Customize the prompt used in shell output
+              // Values below are default
+              prompt: {
+                user: "root",
+                host: "localhost",
+                global: false,
+              },
+              // By default the HTML entities <>&'" are escaped.
+              // Add additional HTML escapes by providing a mapping
+              // of HTML entities and their escape value IE: { '}': '&#123;' }
+              escapeEntities: {},
+            },
+          },
+          {
+            resolve: `gatsby-remark-embedder`,
+            options: {
+              customTransformers: [
+                // Your custom transformers
+              ],
+              services: {
+                // The service-specific options by the name of the service
+              },
+            },
+          },
+        ],
       },
     },
     "gatsby-plugin-sharp",
