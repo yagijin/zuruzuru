@@ -1,5 +1,9 @@
 import * as React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
+import * as styles from "../styles/blogs.module.scss";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Tags from "../components/Tags";
 
 const BlogsPage = () => {
   const [blogs, setBlogs] = React.useState([]);
@@ -57,36 +61,48 @@ const BlogsPage = () => {
     filterBlogs(event.target.value);
   };
 
-  const card = dispBlogs.map((blog) => {
-    return (
-      <div key={blog.frontmatter.title} className="card">
-        <div className="card-header">
-          <Link to={blog.frontmatter.url}>{blog.frontmatter.title}</Link>
-          {blog.frontmatter.tags.map((tag) => {
-            return (
-              <span key={tag} onClick={() => filterTags(tag)}>
-                {tag}
-              </span>
-            );
-          })}
-        </div>
-        <div className="card-body">
-          <p>{blog.frontmatter.description}</p>
-        </div>
-      </div>
+  const card =
+    dispBlogs.length > 0 ? (
+      dispBlogs.map((blog) => {
+        return (
+          <div key={blog.frontmatter.title} className="card">
+            <div className="card-header">
+              <h2>
+                <Link to={blog.frontmatter.url}>{blog.frontmatter.title}</Link>
+              </h2>
+              <Tags tags={blog.frontmatter.tags} isSmall={true} />
+            </div>
+            <div className="card-body">
+              <p>{blog.frontmatter.description}</p>
+            </div>
+            <hr />
+          </div>
+        );
+      })
+    ) : (
+      <p>一致する記事がありませんでした。</p>
     );
-  });
 
   return (
-    <main>
-      <title>Search Page</title>
-      <h1>Blogs</h1>
-      <label>
-        検索
-        <input type="text" size="10" value={textbox} onChange={handleChange} />
-      </label>
-      {card}
-    </main>
+    <>
+      <main className={styles.main}>
+        <title>Search Page</title>
+        <Header link="/blogs" title="Tech Blogs" />
+        <div className={styles.search}>
+          <label>
+            検索：
+            <input
+              type="text"
+              size="25"
+              value={textbox}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        {card}
+      </main>
+      <Footer />
+    </>
   );
 };
 

@@ -1,0 +1,12 @@
+@import "./colors.scss";
+
+.footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  p {
+    margin: 4px 0;
+  }
+  margin-bottom: 10px;
+}

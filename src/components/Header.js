@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import Helmet from "react-helmet";
-import "../styles/header.scss";
+import * as styles from "../styles/header.module.scss";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <>
       <Helmet>
@@ -14,11 +14,11 @@ const Header = () => {
           rel="stylesheet"
         />
       </Helmet>
-      <header className="header">
-        <Link to="/" className="title">
+      <header className={styles.header}>
+        <Link to={props.link} className={styles.title}>
           <h1>
-            <span className="title-main">BLOG🍜</span>
-            <span className="zuruzuru">&lt; ズルズル </span>
+            <span className={styles.name}>{props.title}🍜</span>
+            <span className={styles.zuruzuru}>&lt; ズルズル </span>
           </h1>
         </Link>
       </header>

@@ -27,10 +27,6 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [`.mdx`, `.md`],
-        defaultLayouts: {
-          blog: require.resolve("./src/components/BlogTemplate.js"),
-          default: require.resolve("./src/components/BlogTemplate.js"),
-        },
         gatsbyRemarkPlugins: [
           "gatsby-remark-numbered-footnotes",
           {
@@ -85,6 +81,13 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `./src/blogs`,
+        name: "blogs",
+      },
     },
     {
       resolve: `gatsby-plugin-typescript`,
