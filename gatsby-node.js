@@ -24,7 +24,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   blogs.forEach((node) => {
     createPage({
-      path: "/blog/" + node.frontmatter.date + "-" + node.frontmatter.title,
+      path:
+        "/blog/" +
+        node.frontmatter.date +
+        "-" +
+        node.frontmatter.title
+          .toLowerCase()
+          .replace(/　/g, "-")
+          .replace(/ /g, "-"),
       component: path.resolve(`./src/components/BlogTemplate.js`),
       context: { id: node.id },
     });
