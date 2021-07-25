@@ -1,6 +1,24 @@
 @import "./colors.scss";
+@import "./main.scss";
 
 body {
   margin: 0;
   background-color: $white;
+}
+
+a:not(.not-default) {
+  text-decoration: none;
+  &:link {
+    color: $primary;
+  }
+  &:visited {
+    color: $grey;
+  }
+  &:hover {
+    color: $red;
+    text-decoration: underline dotted;
+  }
+  &:active {
+    color: $primary;
+  }
 }

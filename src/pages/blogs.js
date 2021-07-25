@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
-import * as styles from "../styles/blogs.module.scss";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Tags from "../components/Tags";
@@ -85,10 +84,10 @@ const BlogsPage = () => {
 
   return (
     <>
-      <main className={styles.main}>
+      <main className="blogs-main">
         <title>Search Page</title>
         <Header link="/blogs" title="Tech Blogs" />
-        <div className={styles.search}>
+        <div className="blogs-search">
           <label>
             検索：
             <input

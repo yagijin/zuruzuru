@@ -1,22 +1,19 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import * as styles from "../styles/tags.module.scss";
 
 const Tags = (props) => {
   const tags = props.tags.map((tag) => {
     return (
       <div
         key={tag}
-        className={
-          props.isSmall == true ? `${styles.small} ${styles.tag}` : styles.tag
-        }
+        className={props.isSmall == true ? "tags-main tags-small" : "tags-main"}
       >
         {tag}
       </div>
     );
   });
 
-  return <div className={styles.tags}>{tags}</div>;
+  return <div className="tags-container">{tags}</div>;
 };
 
 export default Tags;

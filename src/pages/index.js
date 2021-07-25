@@ -1,15 +1,28 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import RecentBlogs from "../components/RecentBlogs";
+import Preparing from "../components/Preparing";
+import Profile from "../components/Profile";
+import Marquee from "../components/Marquee";
+import Footer from "../components/Footer";
+import Title from "../components/Title";
 
 const IndexPage = () => {
   return (
-    <main>
-      <title>Home</title>
-      <h1>This is Home Page</h1>
-      <Link to="/recent">テックブログをススル</Link>
-      <Link to="/map/morning">モーニングマップ🗺</Link>
-      <Link to="/zurustagram">ズルスタグラム📷</Link>
-    </main>
+    <>
+      <main className="index-main">
+        <title>Home</title>
+        <Marquee />
+        <Profile />
+        <RecentBlogs />
+        <Title title="その他コンテンツ" emoji="" />
+        <div className="index-preparing">
+          <Preparing />
+        </div>
+        <hr />
+      </main>
+
+      <Footer />
+    </>
   );
 };
 
