@@ -1,6 +1,4 @@
 node_modules/
 .cache/
 public
-src/blogs/*
-static/img/*
 .DS_Store

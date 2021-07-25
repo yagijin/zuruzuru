@@ -22,3 +22,40 @@ a:not(.not-default) {
     color: $primary;
   }
 }
+
+blockquote {
+  position: relative;
+  padding: 10px 15px 10px 40px;
+  box-sizing: border-box;
+  font-style: oblique;
+  background: $white;
+  color: $grey;
+  border-left: 4px solid $secondary;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
+  margin-left: 16px;
+}
+
+blockquote:before {
+  display: inline-block;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  content: "“";
+  color: $secondary;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+blockquote p {
+  padding: 0;
+  margin: 7px 0;
+  line-height: 1.7;
+}
+
+blockquote cite {
+  display: block;
+  text-align: right;
+  color: $grey;
+  font-size: 0.9em;
+}

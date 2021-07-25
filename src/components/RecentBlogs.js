@@ -43,7 +43,9 @@ const RecentBlogs = () => {
       <hr />
       {card}
       <div className="recentblogs-show">
-        <Link to="/blogs">＞Show All</Link>
+        <Link to="/blogs" className="not-default">
+          ＞Show All
+        </Link>
       </div>
     </div>
   );

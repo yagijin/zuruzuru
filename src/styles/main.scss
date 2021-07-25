@@ -106,11 +106,10 @@
   flex-wrap: wrap;
 }
 .tags-main {
-  color: #ececec;
   font-weight: bold;
-  background-color: $secondary;
-  border-radius: 8px;
-  padding: 4px 8px 4px 8px;
+  border-radius: 50px;
+  border: 2px solid $grey;
+  padding: 2px 8px 2px 8px;
   margin-right: 4px;
   margin-bottom: 4px;
 }
@@ -133,7 +132,7 @@
 /* component header */
 .header-main {
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
 }
 .header-title {
   text-decoration: none;
@@ -148,6 +147,19 @@
 }
 .header-zuruzuru {
   font-size: x-small;
+}
+.header-totop {
+  color: $grey;
+  text-decoration: none;
+  font-weight: bold;
+  p {
+    border: 2px solid $grey;
+    border-radius: 50px;
+    padding: 2px 8px;
+    &:hover {
+      padding: 3px 9px;
+    }
+  }
 }
 
 /* component preparing */
@@ -222,9 +234,14 @@
 .recentblogs-show {
   a {
     padding: 8px 16px;
-    border: 1px solid $grey;
+    border: 2px solid $grey;
     font-weight: bolder;
     border-radius: 50px;
+    text-decoration: none;
+    color: $grey;
+    &:hover {
+      padding: 9px 17px;
+    }
   }
   margin-top: 20px;
   margin-left: 20px;

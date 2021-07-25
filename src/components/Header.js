@@ -20,6 +20,9 @@ const Header = (props) => {
             <span className="header-zuruzuru">&lt; ズルズル </span>
           </h1>
         </Link>
+        <Link to="/" className="header-totop not-default">
+          <p>＞Topへ</p>
+        </Link>
       </header>
     </>
   );
