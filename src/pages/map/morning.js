@@ -1,9 +1,11 @@
 import * as React from "react";
-import Leaflet from "leaflet";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+//import Leaflet from "leaflet";
+//import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import data from "../../../static/mornings.json";
 
 const MorningMap = () => {
+  {
+    /*
   const ramenIcon = Leaflet.icon({
     iconUrl: "./img/ramen.png",
     shadowUrl: "../../static/mapicon/ramen-shadow.svg",
@@ -13,10 +15,13 @@ const MorningMap = () => {
     shadowAnchor: [24, 24],
     popupAnchor: [24, 24],
   });
+*/
+  }
 
   return (
     <main>
       <title>Morning Map</title>
+      {/*
       <MapContainer
         center={[35.0854944, 138.374425]}
         zoom={9}
@@ -33,6 +38,7 @@ const MorningMap = () => {
           </Popup>
         </Marker>
       </MapContainer>
+      */}
     </main>
   );
 };
