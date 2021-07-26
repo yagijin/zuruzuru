@@ -71,9 +71,10 @@
   @include media-query-page;
   h2 {
     margin-bottom: 8px;
+    margin-top: 8px;
   }
   hr {
-    margin-bottom: 32px;
+    margin-bottom: 16px;
   }
 }
 .blogs-search {
@@ -126,15 +127,15 @@
   align-items: center;
   flex-direction: column;
   margin-top: 20px;
+  margin-bottom: 10px;
   p {
     margin: 4px 0;
   }
-  margin-bottom: 10px;
-}
-.footer-right {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  * {
+    @media (max-width: 749px) {
+      font-size: small;
+    }
+  }
 }
 
 /* component header */
@@ -147,7 +148,6 @@
   text-decoration: none;
   h1 {
     color: black;
-    font-family: "Noto Sans JP", sans-serif;
     margin-bottom: 16px;
   }
   .header-name {
@@ -221,6 +221,10 @@
     border: 3px solid $secondary;
     margin: 0 40px 0 0;
   }
+  h1 {
+    color: $black;
+    font-weight: 900;
+  }
 }
 .profile-career {
   border: none;
@@ -247,14 +251,14 @@
 /* component recentblogs */
 .recentblogs-show {
   a {
-    padding: 8px 16px;
+    padding: 4px 16px;
     border: 2px solid $grey;
     font-weight: bolder;
     border-radius: 50px;
     text-decoration: none;
     color: $grey;
     &:hover {
-      padding: 9px 17px;
+      padding: 5px 17px;
     }
   }
   margin-top: 20px;
@@ -276,4 +280,9 @@
   p:first-of-type {
     margin-top: 30px;
   }
+}
+
+/* page notfound(404) */
+.notfound {
+  @include media-query-page;
 }

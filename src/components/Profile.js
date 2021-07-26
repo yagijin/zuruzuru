@@ -11,7 +11,6 @@ const Profile = () => {
           <p>よく登呂遺跡に出没します</p>
         </div>
       </div>
-      <p className="profile-likes">🏕　🚲　🍜　🏸　🏐　🧙　☖　♞　⚆　🎴　🎲🎲</p>
 
       <table className="profile-career">
         <tbody>
@@ -29,6 +28,7 @@ const Profile = () => {
           </tr>
         </tbody>
       </table>
+      <p className="profile-likes">🏕　🚲　🍜　🏸　🏐　🧙　☖　♞　⚆　🎴　🎲🎲</p>
       <SNS />
     </>
   );

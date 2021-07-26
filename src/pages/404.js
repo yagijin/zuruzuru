@@ -1,13 +1,18 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const NotFoundPage = () => {
   return (
-    <main>
-      <title>Not found</title>
-      <h1>Page not found</h1>
-      <Link to="/">Go home</Link>
-    </main>
+    <>
+      <main className="notfound">
+        <title>Not found</title>
+        <Header title="Not found" />
+        <h1>Page Not Found</h1>
+        <p>お探しのページは見つかりませんでした。</p>
+      </main>
+      <Footer />
+    </>
   );
 };
 
