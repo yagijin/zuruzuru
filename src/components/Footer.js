@@ -4,7 +4,10 @@ import { Link } from "gatsby";
 const Footer = () => {
   return (
     <footer className="footer-main">
-      <p>© 2019-{new Date().getFullYear()} yagijin, All Rights Reserved.</p>
+      <p className="footer-right">
+        <span>© 2019-{new Date().getFullYear()} </span>
+        <span>yagijin, All Rights Reserved.</span>
+      </p>
       <p>
         <Link to="/privacy">Privacy Policy</Link>
       </p>

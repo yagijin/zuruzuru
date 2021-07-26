@@ -8,7 +8,7 @@
   }
   /* mobile */
   @media (max-width: 749px) {
-    margin: 30px 15% 0 15%;
+    margin: 20px 5% 0 5%;
   }
 }
 @mixin centering() {
@@ -47,6 +47,9 @@
   img {
     width: 100%;
     border: 1px solid $grey;
+  }
+  p {
+    margin: 8px 0px;
   }
 }
 .blog-template-title {
@@ -128,17 +131,24 @@
   }
   margin-bottom: 10px;
 }
+.footer-right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 /* component header */
 .header-main {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .header-title {
   text-decoration: none;
   h1 {
     color: black;
     font-family: "Noto Sans JP", sans-serif;
+    margin-bottom: 16px;
   }
   .header-name {
     background: linear-gradient(transparent 70%, $accent 30%);
@@ -159,6 +169,7 @@
     &:hover {
       padding: 3px 9px;
     }
+    margin: 8px 0px;
   }
 }
 
@@ -167,6 +178,9 @@
   font-size: xx-large;
   color: #5a5a5a;
   font-weight: bolder;
+  @media (max-width: 749px) {
+    font-size: x-large;
+  }
 }
 
 .preparing-zuruzuru {
@@ -254,4 +268,12 @@
 }
 .recentblogs-indent {
   margin-left: 10px;
+}
+
+/* page privacy */
+.privacy-main {
+  @include media-query-page;
+  p:first-of-type {
+    margin-top: 30px;
+  }
 }
