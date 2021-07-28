@@ -11,7 +11,6 @@ const Profile = () => {
           <p>よく登呂遺跡に出没します</p>
         </div>
       </div>
-
       <table className="profile-career">
         <tbody>
           <tr>
@@ -20,7 +19,10 @@ const Profile = () => {
           </tr>
           <tr>
             <td>2021</td>
-            <td>名城大学大学院 理工学研究科情報工学専攻</td>
+            <td style={{ display: "flex", flexWrap: "wrap" }}>
+              <span>名城大学大学院</span>
+              <span>理工学研究科情報工学専攻</span>
+            </td>
           </tr>
           <tr>
             <td>2019</td>
@@ -28,8 +30,8 @@ const Profile = () => {
           </tr>
         </tbody>
       </table>
-      <p className="profile-likes">🏕　🚲　🍜　🏸　🏐　🧙　☖　♞　⚆　🎴　🎲🎲</p>
       <SNS />
+      {/*<p className="profile-likes">🏕　🚲　🍜　🏸　🏐　🧙　☖　♞　⚆　🎴　🎲🎲</p>*/}
     </>
   );
 };

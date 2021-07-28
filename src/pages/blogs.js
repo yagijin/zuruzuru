@@ -86,7 +86,7 @@ const BlogsPage = () => {
     <>
       <main className="blogs-main">
         <title>Search Page</title>
-        <Header link="/blogs" title="Tech Blogs" />
+        <Header link="/blogs" title="All Blogs" />
         <div className="blogs-search">
           <label>
             検索：

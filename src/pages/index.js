@@ -20,7 +20,6 @@ const IndexPage = () => {
         </div>
         <hr />
       </main>
-
       <Footer />
     </>
   );

@@ -3,10 +3,10 @@ import { Link } from "gatsby";
 
 const SNS = () => {
   const snsList = [
-    { name: "github", url: "https://github.com/yagijin" },
-    { name: "twitter", url: "https://twitter.com/yagijinjin" },
-    { name: "instagram", url: "https://www.instagram.com/yagijimjim" },
-    { name: "blog", url: "https://zuruzurura.men/blogs" },
+    { name: "Github", url: "https://github.com/yagijin" },
+    { name: "Twitter", url: "https://twitter.com/yagijinjin" },
+    { name: "Instagram", url: "https://www.instagram.com/yagijimjim" },
+    { name: "Blog", url: "https://zuruzurura.men/blogs" },
   ];
 
   const sns = snsList.map((value) => {
@@ -16,9 +16,10 @@ const SNS = () => {
         href={value.url}
         target="_blank"
         rel="noopener"
-        className="sns-main"
+        className="sns-main not-default"
       >
-        <img src={"./social/" + value.name + ".svg"} />
+        {value.name}
+        {/*<img src={"./social/" + value.name.toLowerCase + ".svg"} />*/}
       </a>
     );
   });

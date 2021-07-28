@@ -12,7 +12,7 @@ export default function PageTemplate({ data: { mdx } }) {
   return (
     <>
       <main className="blog-template-main">
-        <Header link="/blogs" title="Tech Blog" />
+        <Header link="/blogs" title="Zuru Blog" />
         <p className="blog-template-date">{mdx.frontmatter.date}</p>
         <h1 className="blog-template-title">{mdx.frontmatter.title}</h1>
         <Tags tags={mdx.frontmatter.tags} />

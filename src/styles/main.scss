@@ -16,6 +16,23 @@
   justify-content: center;
 }
 
+@mixin simple-button($color) {
+  font-weight: bold;
+  border-radius: 50px;
+  border: 2px solid $color;
+  color: $color;
+  padding: 2px 8px 4px 8px;
+}
+
+@mixin simple-linked-button($color) {
+  text-decoration: none;
+  color: $color;
+  &:hover {
+    color: $red;
+    text-decoration: underline dotted;
+  }
+}
+
 /* page index */
 .index-main {
   @media (min-width: 750px) {
@@ -91,11 +108,9 @@
 }
 .sns-main {
   display: block;
-  margin-left: 10px;
-  width: 36px;
-  &:hover {
-    width: 48px;
-  }
+  margin-right: 10px;
+  @include simple-button($grey);
+  @include simple-linked-button($grey);
 }
 
 /* page morningmap */
@@ -113,6 +128,7 @@
   font-weight: bold;
   border-radius: 50px;
   border: 2px solid $grey;
+  color: $grey;
   padding: 2px 8px 2px 8px;
   margin-right: 4px;
   margin-bottom: 4px;
@@ -216,6 +232,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
+  margin-bottom: 20px;
   img {
     border-radius: 50%;
     border: 3px solid $secondary;
