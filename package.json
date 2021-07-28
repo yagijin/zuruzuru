@@ -12,7 +12,8 @@
     "start": "gatsby develop",
     "build": "gatsby build && cp -R ./public ./docs",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "blog": "go run ./tools/blog-initializer.go"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
