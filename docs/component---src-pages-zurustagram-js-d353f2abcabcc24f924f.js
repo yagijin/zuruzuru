@@ -1,2 +1,0 @@
-(self.webpackChunkblog=self.webpackChunkblog||[]).push([[881],{3843:function(e,t,l){"use strict";l.r(t);var u=l(7294);t.default=function(){return u.createElement("main",null,u.createElement("title",null,"Zurustagram"),u.createElement("h1",null,"This is Zurustagram"))}}}]);
-//# sourceMappingURL=component---src-pages-zurustagram-js-d353f2abcabcc24f924f.js.map
