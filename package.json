@@ -10,12 +10,11 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build &&  cp -R ./public ./docs",
-    "deploy": "gatsby build && gh-pages -d public",
+    "build": "gatsby build",
+    "deploy": "gatsby build && gh-pages -d public -b deploy",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "blog": "go run ./tools/blog-initializer.go",
-    "pages": "gh-pages -d public -b deploy"
+    "blog": "go run ./tools/blog-initializer.go"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
