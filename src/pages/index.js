@@ -1,4 +1,8 @@
+/* default packages */
 import * as React from "react";
+import { Helmet } from "react-helmet";
+
+/* components */
 import RecentBlogs from "../components/RecentBlogs";
 import Preparing from "../components/Preparing";
 import Profile from "../components/Profile";
@@ -9,15 +13,13 @@ import Title from "../components/Title";
 const IndexPage = () => {
   return (
     <>
+      <Helmet title="zuruzuru" defer={false} />
       <main className="index-main">
-        <title>Home</title>
         <Marquee />
         <Profile />
         <RecentBlogs />
         <Title title="その他コンテンツ" emoji="" />
-        <div className="index-preparing">
-          <Preparing />
-        </div>
+        <Preparing />
         <hr />
       </main>
       <Footer />

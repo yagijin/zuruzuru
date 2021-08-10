@@ -1,13 +1,17 @@
+/* default packages */
 import * as React from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
+
+/* components */
 import Title from "../components/Title";
 import Footer from "../components/Footer";
 
 const PrivacyPolicy = () => {
   return (
     <>
+      <Helmet title="PrivacyPolicy" defer={false} />
       <main className="privacy-main">
-        <title>PrivacyPolicy</title>
         <div>
           <Title title="PrivacyPolicy" emoji="🔒" />
           <Link to="/">＞Topへ戻る</Link>

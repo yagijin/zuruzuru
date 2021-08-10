@@ -1,8 +1,12 @@
+/* default packages */
 import * as React from "react";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { Helmet } from "react-helmet";
+import { graphql, useStaticQuery } from "gatsby";
+
+/* components */
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Tags from "../components/Tags";
+import BlogCard from "../components/BlogCard";
 
 const BlogsPage = () => {
   const [blogs, setBlogs] = React.useState([]);
@@ -45,38 +49,15 @@ const BlogsPage = () => {
     );
   };
 
-  const filterTags = (text) => {
-    setDispBlogs(
-      blogs.filter((blog) => {
-        return blog.frontmatter.tags.some((tag) => {
-          return tag.toLowerCase().includes(text.toLowerCase());
-        });
-      })
-    );
-  };
-
   const handleChange = (event) => {
     setTextbox(event.target.value);
     filterBlogs(event.target.value);
   };
 
-  const card =
+  const blogPreviews =
     dispBlogs.length > 0 ? (
       dispBlogs.map((blog) => {
-        return (
-          <div key={blog.frontmatter.title} className="card">
-            <div className="card-header">
-              <h2>
-                <Link to={blog.frontmatter.url}>{blog.frontmatter.title}</Link>
-              </h2>
-              <Tags tags={blog.frontmatter.tags} isSmall={true} />
-            </div>
-            <div className="card-body">
-              <p>{blog.frontmatter.description}</p>
-            </div>
-            <hr />
-          </div>
-        );
+        return <BlogCard key={blog.frontmatter.title} blog={blog} />;
       })
     ) : (
       <p>一致する記事がありませんでした。</p>
@@ -84,8 +65,8 @@ const BlogsPage = () => {
 
   return (
     <>
+      <Helmet title="Blogs" defer={false} />
       <main className="blogs-main">
-        <title>Search Page</title>
         <Header link="/blogs" title="All Blogs" />
         <div className="blogs-search">
           <label>
@@ -98,7 +79,7 @@ const BlogsPage = () => {
             />
           </label>
         </div>
-        {card}
+        {blogPreviews}
       </main>
       <Footer />
     </>

@@ -1,7 +1,10 @@
+/* default packages */
 import * as React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
+
+/* components */
 import Title from "../components/Title";
-import Tags from "../components/Tags";
+import BlogCard from "../components/BlogCard";
 
 const RecentBlogs = () => {
   const allBlogs = useStaticQuery(graphql`
@@ -20,33 +23,17 @@ const RecentBlogs = () => {
     }
   `);
 
-  const card = allBlogs.allMdx.nodes.map((node) => {
-    return (
-      <div key={node.frontmatter.title} className="card">
-        <h3 className="card-header recentblogs-indent">
-          <Link to={node.frontmatter.url}>{node.frontmatter.title}</Link>
-        </h3>
-        <div className="recentblogs-indent">
-          <Tags tags={node.frontmatter.tags} isSmall={true} />
-        </div>
-        <div className="recentblogs-indent">
-          <p>{node.frontmatter.description}</p>
-        </div>
-        <hr />
-      </div>
-    );
+  const blogsPreview = allBlogs.allMdx.nodes.map((node) => {
+    return <BlogCard key={node.frontmatter.title} blog={node} />;
   });
 
   return (
-    <div className="recentblogs-main">
+    <div>
       <Title title="Recent Blogs" emoji="📖" />
-      <hr />
-      {card}
-      <div className="recentblogs-show">
-        <Link to="/blogs" className="not-default">
-          ＞Show All
-        </Link>
-      </div>
+      {blogsPreview}
+      <Link to="/blogs" className="not-default">
+        Show All
+      </Link>
     </div>
   );
 };

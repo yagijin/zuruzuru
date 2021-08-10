@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "gatsby";
 
 const SNS = () => {
   const snsList = [
@@ -19,7 +18,6 @@ const SNS = () => {
         className="sns-main not-default"
       >
         {value.name}
-        {/*<img src={"./social/" + value.name.toLowerCase + ".svg"} />*/}
       </a>
     );
   });
