@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://blog.yagijin.com",
+    siteUrl: "https://zuruzurura.men",
     title: "blog",
   },
   plugins: [
@@ -21,6 +21,58 @@ module.exports = {
         name: `ズルズル`,
         start_url: `/`,
         theme_color: `#698474`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-feed-mdx`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.nodes.map((node) => {
+                return Object.assign({}, node.frontmatter, {
+                  description: node.frontmatter.description,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + node.frontmatter.url,
+                  guid: site.siteMetadata.siteUrl + node.frontmatter.url,
+                });
+              });
+            },
+            query: `
+              {
+                allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+                  nodes {
+                    frontmatter {
+                      date
+                      title
+                      description
+                      url
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "Zuruzuru's RSS Feed",
+            // optional configuration to insert feed reference in pages:
+            // if `string` is used, it will be used to create RegExp and then test if pathname of
+            // current page satisfied this regular expression;
+            // if not provided or `undefined`, all pages will have feed reference inserted
+            match: "^/blog/",
+          },
+        ],
       },
     },
     {
