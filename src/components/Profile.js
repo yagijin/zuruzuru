@@ -5,7 +5,7 @@ const Profile = () => {
   return (
     <>
       <div className="profile-main">
-        <img src="./profile.jpeg" />
+        <img src="./profile.jpeg" alt="profile" />
         <div>
           <h1>yagijin</h1>
           <p>よく登呂遺跡に出没します</p>
