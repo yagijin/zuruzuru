@@ -86,8 +86,8 @@ module.exports = {
             options: {
               classPrefix: "language-",
               inlineCodeMarker: null,
-              aliases: { js: "javascript", ts: "typescript" },
-              showLineNumbers: true,
+              aliases: { js: "javascript", ts: "typescript", sh: "shell" },
+              showLineNumbers: false,
               noInlineHighlight: false,
               // Customize the prompt used in shell output
               // Values below are default
