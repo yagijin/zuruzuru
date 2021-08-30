@@ -5,7 +5,7 @@ const SNS = () => {
     { name: "Github", url: "https://github.com/yagijin" },
     { name: "Twitter", url: "https://twitter.com/yagijinjin" },
     { name: "Instagram", url: "https://www.instagram.com/yagijimjim" },
-    { name: "Blog", url: "https://zuruzurura.men/blogs" },
+    { name: "RSS", url: "https://zuruzurura.men/rss.xml" },
   ];
 
   const sns = snsList.map((value) => {
