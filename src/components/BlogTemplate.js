@@ -9,8 +9,9 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Tags from "../components/Tags";
+import GoogleFonts from "../components/GoogleFonts";
 
-const shortcodes = { Link };
+const shortcodes = { Link, GoogleFonts };
 
 export default function PageTemplate({ data: { mdx } }) {
   return (
