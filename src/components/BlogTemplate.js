@@ -10,13 +10,18 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Tags from "../components/Tags";
 import GoogleFonts from "../components/GoogleFonts";
+import OGP from "../components/OGP";
 
 const shortcodes = { Link, GoogleFonts };
 
 export default function PageTemplate({ data: { mdx } }) {
   return (
     <>
-      <Helmet title={mdx.frontmatter.title} defer={false} />
+      <OGP
+        title={mdx.frontmatter.title}
+        description={mdx.frontmatter.description}
+        url={mdx.frontmatter.url}
+      />
       <main className="blog-template-main">
         <Header link="/blogs" title="Blog" />
         <p className="blog-template-date">{mdx.frontmatter.date}</p>
