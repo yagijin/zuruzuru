@@ -79,6 +79,40 @@
   @include media-query-page;
 }
 
+.blog-template-main > blockquote {
+  position: relative;
+  padding: 10px 15px 10px 40px;
+  box-sizing: border-box;
+  font-style: oblique;
+  background: $white;
+  color: $grey;
+  border-left: 4px solid $secondary;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
+  margin-left: 16px;
+  &:before {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    content: "“";
+    color: $secondary;
+    font-size: 30px;
+    line-height: 1;
+    font-weight: 900;
+  }
+  p {
+    padding: 0;
+    margin: 7px 0;
+    line-height: 1.7;
+  }
+  cite {
+    display: block;
+    text-align: right;
+    color: $grey;
+    font-size: 0.9em;
+  }
+}
+
 /* page blogs */
 .blogs-main {
   @include media-query-page;
@@ -265,4 +299,20 @@
 /* page notfound(404) */
 .notfound {
   @include media-query-page;
+}
+
+/* component GoogleMap */
+.google-map {
+  position: relative;
+  width: 100%;
+  padding: calc(450 / 600 * 100%) 0 0; /*iframeの高さと横幅の値を入れます*/
+}
+
+.google-map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid $grey;
 }

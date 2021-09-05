@@ -1,6 +1,5 @@
 /* default packages */
 import React from "react";
-import { Helmet } from "react-helmet";
 import { MDXProvider } from "@mdx-js/react";
 import { graphql, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
@@ -9,10 +8,12 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Tags from "../components/Tags";
-import GoogleFonts from "../components/GoogleFonts";
 import OGP from "../components/OGP";
+import GoogleFonts from "../components/GoogleFonts";
+import GoogleMap from "../components/GoogleMap";
+import Twitter from "../components/Twitter";
 
-const shortcodes = { Link, GoogleFonts };
+const shortcodes = { Link, GoogleFonts, GoogleMap, Twitter };
 
 export default function PageTemplate({ data: { mdx } }) {
   return (
