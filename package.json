@@ -15,7 +15,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "blog": "go run ./tools/blog-initializer.go",
-    "ogp": "sh ./tools/ogp/update_ogp.sh"
+    "ogp": "sh ./tools/ogp/update_all_ogp.sh"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
