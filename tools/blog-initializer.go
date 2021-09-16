@@ -21,7 +21,7 @@ func main() {
 	description := scanner.Text()
 
 	date := time.Now().Format(time.RFC3339)
-	filename := strings.Split(date, "T")[0] + "-" + regexp.MustCompile(`[\s　]`).ReplaceAllString(title, "-")
+	filename := strings.Split(date, "T")[0] + "-" + strings.ToLower(regexp.MustCompile(`[\s　]`).ReplaceAllString(title, "-"))
 
 	file, err := os.Create("./src/blogs/" + filename + ".mdx")
 	if err != nil {
