@@ -84,7 +84,25 @@ fzf[^fzf] は曖昧検索した結果を標準出力するコマンドです。�
 export FZF_DEFAULT_OPTS='--height 100% --reverse --border'
 ```
 
-準公式ドキュメント[^ghqhandbook]の例を参考に ghq のリポジトリ検索の処理を書き出すと以下のようになります。この内容を`.zshrc`に追記してください。
+## 任意のリポジトリに cd できるようにする
+
+fzf を使って、検索して、そのリポジトリの配下のディレクトリに cd できるようにします。
+
+![fzf_preview1](/img/fzf_preview1.png "fzf_preview1")
+
+準公式ドキュメント[^ghqhandbook]の例を参考に 処理を書き出すと以下のようになります。この内容を`.zshrc`に追記してください。
+
+### エイリアスにしたい場合
+
+gcd にエイリアスを貼っています。
+
+```sh
+alias gcd='cd $(ghq root)/$(ghq list | fzf)'
+```
+
+### キーバインドにしたい場合
+
+zsh 利用時にキー`ctrl + ] `を押すと、登録したキーバインドが呼び出されます。
 
 ```sh
 function ghq_cd() {
@@ -99,10 +117,6 @@ zle -N ghq_cd
 bindkey '^]' ghq_cd
 ```
 
-zsh 利用時にキー`ctrl + ] `を押すと、以下のように検索して、そのリポジトリの配下のディレクトリに cd できます。
-
-![fzf_preview1](/img/fzf_preview1.png "fzf_preview1")
-
 ## その他コードレシピ
 
 僕が使っているレシピを共有します。
@@ -111,6 +125,14 @@ fzf での検索時に各リポジトリの README をプレビューし、リ�
 また、bat を使うことでカラーでプレビューしています。
 
 code を開く際に exit してシェルを閉じていますが、mac の zsh はデフォルトではできないようになっているので自動でシェルを閉じたい人は zsh の設定からできるように変えておいてください。
+
+### エイリアスにしたい場合
+
+```sh
+alias gcode='code $(ghq root)/$(ghq list | fzf --preview "bat --color=always --style=numbers --line-range=:100 $(ghq root)/{}/README.*") && exit'
+```
+
+### キーバインドにしたい場合
 
 ```sh
 # ghqの管理フォルダをfzfで簡単にcodeで開けるようにする
