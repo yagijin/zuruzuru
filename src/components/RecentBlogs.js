@@ -9,7 +9,11 @@ import BlogCard from "../components/BlogCard";
 const RecentBlogs = () => {
   const allBlogs = useStaticQuery(graphql`
     query RecentBlogsQuery {
-      allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 3) {
+      allMdx(
+        sort: { fields: frontmatter___date, order: DESC }
+        filter: { fileAbsolutePath: { regex: "/blogs/" } }
+        limit: 3
+      ) {
         nodes {
           frontmatter {
             date(formatString: "MMMM D, YYYY")
@@ -29,7 +33,7 @@ const RecentBlogs = () => {
 
   return (
     <div>
-      <Title title="Recent Blogs" emoji="📖" />
+      <Title title="Recent Blogs" emoji="🗒" />
       {blogsPreview}
       <Link to="/blogs" className="not-default">
         Show All

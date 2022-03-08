@@ -52,7 +52,7 @@ module.exports = {
             },
             query: `
               {
-                allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+                allMdx(sort: { fields: frontmatter___date, order: DESC }, filter: {fileAbsolutePath: {regex: "/blogs/"}}) {
                   nodes {
                     frontmatter {
                       date
@@ -139,6 +139,13 @@ module.exports = {
       options: {
         path: `./src/blogs`,
         name: "blogs",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `./src/books`,
+        name: "books",
       },
     },
     {

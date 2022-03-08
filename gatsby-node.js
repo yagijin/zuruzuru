@@ -4,7 +4,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
   const result = await graphql(`
     query AllBlogsId {
-      allMdx {
+      allMdx(filter: { fileAbsolutePath: { regex: "/blogs/" } }) {
         nodes {
           id
           frontmatter {

@@ -15,7 +15,10 @@ const BlogsPage = () => {
 
   const allBlogs = useStaticQuery(graphql`
     query AllBlogsQuery {
-      allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+      allMdx(
+        sort: { fields: frontmatter___date, order: DESC }
+        filter: { fileAbsolutePath: { regex: "/blogs/" } }
+      ) {
         nodes {
           frontmatter {
             date(formatString: "MMMM D, YYYY")
