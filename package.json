@@ -15,7 +15,9 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "blog": "go run ./tools/blog-initializer.go",
-    "ogp": "sh ./tools/ogp/update_all_ogp.sh"
+    "ogp": "sh ./tools/ogp/update_all_ogp.sh",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "type": "tsc --noEmit"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -42,9 +44,18 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-leaflet": "^3.2.0",
-    "sass": "^1.35.2"
+    "sass": "^1.35.2",
+    "typescript": "^4.6.2"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-react": "^7.29.3",
     "gh-pages": "^3.2.3"
   }
 }
