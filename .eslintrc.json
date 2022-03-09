@@ -27,6 +27,7 @@
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@typescript-eslint/recommended"],
       "rules": {
+        "no-use-before-define": 0
       }
     }
   ]
