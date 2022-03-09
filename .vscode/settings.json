@@ -20,5 +20,8 @@
   },
   "[markdown]": {
     "editor.formatOnSave": false
+  },
+  "[mdx]": {
+    "editor.formatOnSave": false
   }
 }
