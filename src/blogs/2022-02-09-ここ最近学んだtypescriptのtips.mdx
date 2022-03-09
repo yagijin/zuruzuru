@@ -1,0 +1,111 @@
+---
+title: ここ最近学んだTypescriptのtips
+date: 2022-02-10T00:12:30+09:00
+description: 
+url: /blog/2022-02-09-ここ最近学んだtypescriptのtips/
+tags:
+  - Typescript
+  - React
+---
+
+## 子プロパティだけを取り出したい
+
+
+プロパティへのアクセス方法でひっかかった。
+
+```typescript
+type test = {
+  child: {
+    grandchild: string;
+  }
+}
+
+// こういうアクセスができると思ってたけどできない
+const example1: test.child = {
+  grandchild: "example"
+}
+
+// これはできる
+const example2: test["child"] = {
+  grandchild: "example"
+}
+```
+
+## すべてのプロパティをオプショナルにする
+
+型を再帰的に扱うことでオブジェクトのすべてのプロパティをオプショナルにすることができる。
+自動生成された型をモックサーバなどで汎用的に使いときなどに便利だった。
+
+```typescript
+// これで良さそうだと思ったら Array のときにその内部ではなく Array 自体がオプショナルになって失敗するので、
+type OptionalProperties<T> = {
+  [U in keyof T]?: T[U] | OptionalProperties<T[U]>
+}
+
+// こうするとうまくいく。まえにしらべて stackoverflow のどこかで見かけた。
+type OptionalProperties<T> = {
+  [U in keyof T]?: T[U] extends Array<infer V>
+    ? Array<OptionalProperties<V>>
+    : OptionalProperties<T[U]>
+}
+```
+
+ オプショナルにしたいオブジェクトの階層が1階層のみで良いなら、Utility Types の Partialを使うともっと簡単にできる
+ - https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype
+
+## js に ts の lint が効いちゃう問題
+
+.eslintrc.json を typescript のデフォルトの設定のまま使ってると javascript に typescript の lint が効いてしまう。
+js の設定をデフォルトにして、ts の場合だけ適宜設定を override したら別々で lint が効いていい感じ。
+
+```typescript
+{
+  ...
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "rules": {
+        ...
+      }
+    }
+  ]
+}
+```
+
+## React の children の型
+
+親コンポーネントから受け取った children に新しい props を追加して子コンポーネントに children として渡したい場合、cloneElementを使って children に props を追加したい。
+
+```typescript
+const newChildren = React.cloneElement(children, properties);
+```
+
+ただ、cloneElement の children の部分には ReactElement しか渡せないが、ReactChild には ReactText として string と number が許容されている。
+
+```typescript
+type ReactText = string | number;
+type ReactChild = ReactElement | ReactText;
+```
+
+なのでこれをバリデーションしたい。
+そのときに React には ReactElement の検証用に isValidElement が用意されていて便利だった。
+
+- https://ja.reactjs.org/docs/react-api.html#isvalidelement
+
+
+## double assertion って名前がついてた
+
+本を読んで名前を知ったシリーズ。
+やってはいけない例のこれ double assertion というらしい。
+
+```typescript
+const example = 1 as any as string
+```
+
+## Object.freeze()でも read only にできる
+
+使ったことないけど本に書いてあってへ〜となった。
+tsのreadonlyと違って、jsの機能なのでトランスパイル後である実行時も残るという違いらしい。
+
+- https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
