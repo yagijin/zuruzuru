@@ -27,7 +27,9 @@
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@typescript-eslint/recommended"],
       "rules": {
-        "no-use-before-define": 0
+        "no-use-before-define": 0,
+        "multiline-ternary": 0,
+        "@typescript-eslint/ban-ts-comment": 0
       }
     }
   ]

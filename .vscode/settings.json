@@ -23,5 +23,8 @@
   },
   "[mdx]": {
     "editor.formatOnSave": false
-  }
+  },
+  "cSpell.words": [
+    "frontmatter"
+  ]
 }
