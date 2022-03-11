@@ -1,5 +1,6 @@
 /* default packages */
 import React, { useState, useEffect } from 'react'
+import * as styles from '../styles/pages/blogs.module.scss'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 
@@ -61,9 +62,9 @@ const BlogsPage = () => {
   return (
     <>
       <Helmet title="Blogs" defer={false} />
-      <main className="blogs-main">
+      <main className={styles.blogs}>
         <Header link="/blogs" title="All Blogs" />
-        <div className="blogs-search">
+        <div className={styles.search}>
           <label>
             検索：
             <input

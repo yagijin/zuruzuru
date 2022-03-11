@@ -1,0 +1,17 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  font-size: xx-large;
+  color: #5a5a5a;
+  font-weight: bolder;
+  @media (max-width: 749px) {
+    font-size: x-large;
+  }
+  margin-left: 16px;
+  margin-bottom: 40px;
+}
+
+.zuruzuru {
+  font-size: x-small;
+}

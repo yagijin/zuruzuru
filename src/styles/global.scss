@@ -1,10 +1,9 @@
-@import "./colors.scss";
-@import "./main.scss";
+@import './colors.scss';
 
 body {
   margin: 0;
   background-color: $white;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 a:not(.not-default) {

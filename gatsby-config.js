@@ -1,3 +1,4 @@
+/** @type {import('gatsby').GatsbyConfig} */
 module.exports = {
   siteMetadata: {
     siteUrl: "https://zuruzurura.men",
@@ -153,3 +154,4 @@ module.exports = {
     },
   ],
 };
+
