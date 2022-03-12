@@ -8,6 +8,7 @@ body {
 
 a:not(.not-default) {
   text-decoration: none;
+  word-break: break-all;
   &:link {
     color: $primary;
   }

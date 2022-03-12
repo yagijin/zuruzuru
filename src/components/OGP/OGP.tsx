@@ -1,15 +1,16 @@
 /* default packages */
-import * as React from "react";
-import { Helmet } from "react-helmet";
+import * as React from 'react'
+import { Helmet } from 'react-helmet'
 
 type Props = {
   title: string
   url: string
   description: string
+  default?: boolean
 }
 
 const OGP = (props: Props) => {
-  const siteURL = "https://zuruzurura.men";
+  const siteURL = 'https://zuruzurura.men'
   return (
     <Helmet>
       <title>{props.title}</title>
@@ -21,10 +22,12 @@ const OGP = (props: Props) => {
       {/* Todo：多分urlに不整合が起こるケースがあるので直す */}
       <meta
         property="og:image"
-        content={siteURL + "/ogp/ogp_" + props.title.toLocaleLowerCase() + ".png"}
+        content={`${siteURL}/ogp/ogp_${
+          props.default ? 'main' : props.title.toLocaleLowerCase()
+        }.png`}
       />
     </Helmet>
-  );
-};
+  )
+}
 
-export default OGP;
+export default OGP

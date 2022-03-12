@@ -5,10 +5,10 @@ type Props = {
   tags: string[]
 }
 
-const Tags = (props: Props) => {
+const Tags = ({ tags }: Props) => {
   return (
     <div className={styles.container}>
-      {props.tags.map((tag) => {
+      {tags.map((tag) => {
         return (
           <div key={tag} className={styles.tag}>
             {tag}
@@ -18,5 +18,4 @@ const Tags = (props: Props) => {
     </div>
   )
 }
-
 export default Tags

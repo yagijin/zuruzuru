@@ -17,16 +17,14 @@ type Props = {
   }
 }
 
-const BlogCard = (props: Props) => {
+const BlogCard = ({ blog }: Props) => {
   return (
     <div className={styles.card}>
       <h3>
-        <Link to={props.blog.frontmatter.url}>
-          {props.blog.frontmatter.title}
-        </Link>
+        <Link to={blog.frontmatter.url}>{blog.frontmatter.title}</Link>
       </h3>
-      <Tags tags={props.blog.frontmatter.tags} />
-      <p>{props.blog.frontmatter.description}</p>
+      <Tags tags={blog.frontmatter.tags} />
+      <p>{blog.frontmatter.description}</p>
       <hr />
     </div>
   )
