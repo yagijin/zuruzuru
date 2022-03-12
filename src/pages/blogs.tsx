@@ -9,9 +9,18 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import BlogCard from '../components/BlogCard'
 
+type blog = {
+  frontmatter: {
+    title: string
+    description: string
+    url: string
+    tags: string[]
+  }
+}
+
 const BlogsPage = () => {
-  const [blogs, setBlogs] = useState([])
-  const [dispBlogs, setDispBlogs] = useState([])
+  const [blogs, setBlogs] = useState<Array<blog>>([])
+  const [dispBlogs, setDispBlogs] = useState<Array<blog>>([])
   const [searchbox, setSearchbox] = useState('')
 
   const allBlogs = useStaticQuery(graphql`
@@ -38,20 +47,17 @@ const BlogsPage = () => {
     setDispBlogs(allBlogs.allMdx.nodes)
   }, [])
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchbox(event.target.value)
     setDispBlogs(
       blogs.filter(
         (blog) =>
-          // @ts-ignore
           blog.frontmatter.title
             .toLowerCase()
             .includes(event.target.value.toLowerCase()) ||
-          // @ts-ignore
           blog.frontmatter.description
             .toLowerCase()
             .includes(event.target.value.toLowerCase()) ||
-          // @ts-ignore
           blog.frontmatter.tags.some((tag) => {
             return tag.toLowerCase().includes(event.target.value.toLowerCase())
           })
@@ -77,7 +83,6 @@ const BlogsPage = () => {
         </div>
         {dispBlogs.length > 0 ? (
           dispBlogs.map((blog) => {
-            // @ts-ignore
             return <BlogCard key={blog.frontmatter.title} blog={blog} />
           })
         ) : (

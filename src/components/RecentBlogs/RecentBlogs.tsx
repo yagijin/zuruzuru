@@ -27,10 +27,19 @@ const RecentBlogs = () => {
     }
   `)
 
+  type node = {
+    frontmatter: {
+      url: string
+      title: string
+      description: string
+      tags: string[]
+    }
+  }
+
   return (
     <div>
       <Title title="Recent Blogs" emoji="🗒" />
-      {allBlogs.allMdx.nodes.map((node) => {
+      {allBlogs.allMdx.nodes.map((node: node) => {
         return <BlogCard key={node.frontmatter.title} blog={node} />
       })}
       <Link to="/blogs" className="not-default">
