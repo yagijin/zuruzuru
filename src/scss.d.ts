@@ -21,4 +21,6 @@ declare module '*.scss' {
   export const search: string
   export const index: string
   export const privacy: string
+  export const background: string
+  export const console: string
 }

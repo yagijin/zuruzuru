@@ -1,0 +1,93 @@
+@import '../colors.scss';
+@import '../mixins.scss';
+
+$console: #353535;
+$console-header: #474747;
+
+$menu-close: red;
+$menu-minimize: yellow;
+$menu-expand: greenyellow;
+
+@mixin fontInfo() {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: white;
+  font-size: 1rem;
+}
+
+.background {
+  height: 100vh;
+  @include centering3d();
+}
+
+.console {
+  @include fontInfo();
+  z-index: 1;
+  width: 80%;
+  max-width: 800px;
+  height: 400px;
+  border-radius: 1rem;
+  background: $console;
+
+  header {
+    @include centering();
+    background-color: $console-header;
+    border-radius: 1rem 1rem 0 0;
+    padding: 0.5rem;
+    position: relative;
+    div:first-of-type,
+    div:nth-of-type(2),
+    div:nth-of-type(3) {
+      position: absolute;
+      width: 0.6rem;
+      height: 0.6rem;
+      top: 1rem;
+      border-radius: 50%;
+    }
+    div:first-of-type {
+      background-color: $menu-close;
+      left: 1rem;
+    }
+    div:nth-of-type(2) {
+      background-color: $menu-minimize;
+      left: 2rem;
+    }
+    div:nth-of-type(3) {
+      background-color: $menu-expand;
+      left: 3rem;
+    }
+  }
+  p:first-of-type {
+    text-align: left;
+    margin: 1rem;
+    span {
+      color: $rose;
+      font-weight: bold;
+    }
+  }
+  main {
+    text-align: left;
+    margin: 1rem;
+    div {
+      display: flex;
+      justify-content: left;
+    }
+    span {
+      margin-right: 0.5rem;
+    }
+    input {
+      @include fontInfo();
+      background: $console;
+      width: 100%;
+      border: none;
+      caret-color: white;
+      &:focus {
+        outline: none;
+      }
+    }
+    ol {
+      list-style-type: none;
+      padding-left: 1rem;
+      margin: 0.5rem 0;
+    }
+  }
+}

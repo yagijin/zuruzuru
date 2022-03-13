@@ -16,6 +16,12 @@
   justify-content: center;
 }
 
+@mixin centering3d() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin simple-button($color) {
   font-weight: bold;
   border-radius: 50px;
