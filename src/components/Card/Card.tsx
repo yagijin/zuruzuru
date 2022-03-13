@@ -5,13 +5,19 @@ import { Link } from 'gatsby'
 
 type Props = {
   children: React.ReactNode
+  link: string
+  sameSite: boolean
 }
 
 const Card = (props: Props) => {
-  return (
-    <Link to="/console" className={styles.link}>
+  return props.sameSite ? (
+    <Link to={props.link} className={styles.link}>
       <div className={styles.card}>{props.children}</div>
     </Link>
+  ) : (
+    <a href={props.link} className={styles.link}>
+      <div className={styles.card}>{props.children}</div>
+    </a>
   )
 }
 
