@@ -35,9 +35,13 @@ export default function Blog({ data: { mdx } }: Props) {
   return (
     <>
       <OGP
-        title={mdx.frontmatter.title}
-        description={mdx.frontmatter.description}
-        url={mdx.frontmatter.url}
+        info={{
+          title: mdx.frontmatter.title,
+          type: 'article',
+          description: mdx.frontmatter.description,
+          url: mdx.frontmatter.url,
+        }}
+        filename={`ogp_${mdx.frontmatter.title.toLocaleLowerCase()}.png`}
       />
       <main className={styles.blog}>
         <Header link="/blogs" title="Blog" />

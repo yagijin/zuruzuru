@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import * as styles from '../styles/pages/console.module.scss'
 import GoogleFonts from '../components/GoogleFonts'
+import OGP from '../components/OGP'
 
 import {
   onEnter,
@@ -107,6 +108,15 @@ export default function Console() {
   return (
     <div className={styles.background}>
       <GoogleFonts />
+      <OGP
+        info={{
+          title: 'Console - zuruzuru',
+          type: 'website',
+          description: 'console style profile',
+          url: '/console',
+        }}
+        filename="ogp_console.png"
+      />
       <div className={styles.console} onClick={() => consoleClicked()}>
         <header>
           <div onClick={() => window.alert('消さないで...(T T)')}></div>

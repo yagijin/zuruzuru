@@ -7,11 +7,20 @@ import { Link } from 'gatsby'
 /* components */
 import Title from '../components/Title'
 import Footer from '../components/Footer'
+import OGP from '../components/OGP'
 
 const PrivacyPolicy = () => {
   return (
     <>
       <Helmet title="PrivacyPolicy" defer={false} />
+      <OGP
+        info={{
+          title: 'Privacy Policy - zuruzuru',
+          type: 'website',
+          description: 'privacy policy of zuruzuru',
+          url: '/privacy',
+        }}
+      />
       <main className={styles.privacy}>
         <div>
           <Title title="PrivacyPolicy" emoji="🔒" />

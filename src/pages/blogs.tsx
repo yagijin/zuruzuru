@@ -8,6 +8,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import BlogCard from '../components/BlogCard'
+import OGP from '../components/OGP'
 
 type blog = {
   frontmatter: {
@@ -68,6 +69,14 @@ const BlogsPage = () => {
   return (
     <>
       <Helmet title="Blogs" defer={false} />
+      <OGP
+        info={{
+          title: 'Blogs - zuruzuru',
+          type: 'website',
+          description: 'blogs',
+          url: '/blogs',
+        }}
+      />
       <main className={styles.blogs}>
         <Header link="/blogs" title="All Blogs" />
         <div className={styles.search}>

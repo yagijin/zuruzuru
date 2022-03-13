@@ -11,11 +11,20 @@ import Marquee from '../components/Marquee'
 import Footer from '../components/Footer'
 import Title from '../components/Title'
 import Reading from '../components/Reading'
+import OGP from '../components/OGP'
 
 const IndexPage = () => {
   return (
     <>
       <Helmet title="zuruzuru" defer={false} />
+      <OGP
+        info={{
+          title: 'Top - zuruzuru',
+          type: 'website',
+          description: 'yagijinのサイト',
+          url: '',
+        }}
+      />
       <main className={styles.index}>
         <Marquee />
         <Profile />
