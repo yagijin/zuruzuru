@@ -119,7 +119,13 @@ export default function Console() {
       />
       <div className={styles.console} onClick={() => consoleClicked()}>
         <header>
-          <div onClick={() => window.alert('消さないで...(T T)')}></div>
+          <div
+            onClick={() => {
+              if (window.confirm('トップページへ移動しますが良いですか？')) {
+                window.location.href = './'
+              }
+            }}
+          ></div>
           <div onClick={() => window.alert('最小化できない...')}></div>
           <div onClick={() => window.alert('全画面にできない...')}></div>
           <div>yagijin -- profile</div>

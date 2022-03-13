@@ -1,0 +1,27 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/colors.scss';
+
+.card {
+  border-radius: 1rem;
+  box-shadow: 2px 2px 4px gray;
+  padding: 1rem 1rem 0.5rem 1rem;
+  max-width: 200px;
+  p {
+    margin: 0;
+    text-align: center;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 0.1rem;
+  }
+  &:hover {
+    box-shadow: 2px 2px 4px black;
+  }
+}
+
+.link {
+  display: block;
+  width: 200px;
+}

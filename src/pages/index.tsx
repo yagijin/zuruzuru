@@ -5,13 +5,13 @@ import { Helmet } from 'react-helmet'
 
 /* components */
 import RecentBlogs from '../components/RecentBlogs'
-import Preparing from '../components/Preparing'
 import Profile from '../components/Profile'
 import Marquee from '../components/Marquee'
 import Footer from '../components/Footer'
 import Title from '../components/Title'
 import Reading from '../components/Reading'
 import OGP from '../components/OGP'
+import Card from '../components/Card'
 
 const IndexPage = () => {
   return (
@@ -31,8 +31,15 @@ const IndexPage = () => {
         <Reading />
         <RecentBlogs />
         <Title title="その他コンテンツ" emoji="" />
-        <Preparing />
-        <hr />
+        <Card>
+          <div>
+            <img
+              src="./ogp/ogp_console.png"
+              alt="consoleのスクリーンショット"
+            />
+            <p>Console Style Profile</p>
+          </div>
+        </Card>
       </main>
       <Footer />
     </>
