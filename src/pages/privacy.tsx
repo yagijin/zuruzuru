@@ -52,7 +52,6 @@ const PrivacyPolicy = () => {
         <p>
           また、本サイトで使用しているAmazonリンクには一部Amazonアソシエイトリンクを使用しています。
         </p>
-        <hr />
       </main>
       <Footer />
     </>

@@ -7,6 +7,7 @@ const Footer = () => {
   return (
     <>
       <footer className={styles.footer}>
+        <hr />
         <Link to="/privacy">Privacy Policy</Link>
         <p>© 2019-{new Date().getFullYear()} yagijin, All Rights Reserved.</p>
       </footer>

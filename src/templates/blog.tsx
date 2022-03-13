@@ -51,7 +51,6 @@ export default function Blog({ data: { mdx } }: Props) {
         <MDXProvider components={shortcodes}>
           <MDXRenderer frontmatter={mdx.frontmatter}>{mdx.body}</MDXRenderer>
         </MDXProvider>
-        <hr />
       </main>
       <Footer />
     </>
