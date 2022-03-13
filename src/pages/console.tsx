@@ -137,7 +137,7 @@ export default function Console() {
         </p>
         {stateSL > 0 && (
           <img
-            src="./sl.png"
+            src="../sl.png"
             alt="SLのアイコン"
             style={{
               position: 'absolute',
