@@ -11,7 +11,7 @@
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
-    "deploy": "sh ./tools/ogp/update_ogp.sh && gatsby build && gh-pages -d public -b deploy",
+    "deploy": "sh ./tools/ogp/update.sh && gatsby build && gh-pages -d public -b deploy",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "blog": "go run ./tools/blog-initializer/blog-initializer.go",
