@@ -6,7 +6,6 @@ declare module '*.scss' {
   export const link: string
   export const profile: string
   export const career: string
-  export const zuruzuru: string
   export const marquee: string
   export const emoji: string
   export const header: string

@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as styles from './Preparing.module.scss'
+import * as styles from './Ramen.module.scss'
 
-const Preparing = () => {
+const Ramen = () => {
   function getRandomNum(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1)) + min
   }
@@ -25,11 +25,10 @@ const Preparing = () => {
 
   return (
     <div className={styles.container}>
-      Coming Soon
       <span onClick={handleOnClick}>🍜</span>
-      <span className={styles.zuruzuru}>&lt; ズルズル </span>
+      <span>&lt; ズルズル </span>
     </div>
   )
 }
 
-export default Preparing
+export default Ramen

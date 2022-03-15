@@ -6,7 +6,7 @@ import Title from '../Title'
 const OtherContents = () => {
   return (
     <>
-      <Title title="その他コンテンツ" emoji="" />
+      <Title title="その他コンテンツ" emoji="🍜" />
       <ul className={styles.contents}>
         <li>
           <Card link="/console" sameSite={true}>
