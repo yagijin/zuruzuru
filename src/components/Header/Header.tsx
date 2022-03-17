@@ -16,8 +16,8 @@ const Header = (props: Props) => {
           <span className={styles.zuruzuru}>&lt; ズルズル </span>
         </h1>
       </Link>
-      <Link to="/" className="not-default">
-        <p>＞Topへ</p>
+      <Link to="/">
+        <p>{'> Topへ'}</p>
       </Link>
     </header>
   )
