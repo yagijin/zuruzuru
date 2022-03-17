@@ -4,6 +4,7 @@ import * as styles from './blog.module.scss'
 import { MDXProvider } from '@mdx-js/react'
 import { graphql, Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { Helmet } from 'react-helmet'
 
 /* components */
 import Footer from '../components/Footer'
@@ -34,6 +35,7 @@ type Props = {
 export default function Blog({ data: { mdx } }: Props) {
   return (
     <>
+      <Helmet title={mdx.frontmatter.title} defer={false} />
       <OGP
         info={{
           title: mdx.frontmatter.title,
@@ -43,16 +45,18 @@ export default function Blog({ data: { mdx } }: Props) {
         }}
         filename={`ogp_${mdx.frontmatter.title.toLocaleLowerCase()}.png`}
       />
-      <main className={styles.blog}>
+      <div className="page-wrapper">
         <Header link="/blogs" title="Blog" />
-        <p className={styles.date}>{mdx.frontmatter.date}</p>
-        <h1 className={styles.title}>{mdx.frontmatter.title}</h1>
-        <Tags tags={mdx.frontmatter.tags} />
-        <MDXProvider components={shortcodes}>
-          <MDXRenderer frontmatter={mdx.frontmatter}>{mdx.body}</MDXRenderer>
-        </MDXProvider>
-      </main>
-      <Footer />
+        <main className={styles.blog}>
+          <p className={styles.date}>{mdx.frontmatter.date}</p>
+          <h1 className={styles.title}>{mdx.frontmatter.title}</h1>
+          <Tags tags={mdx.frontmatter.tags} />
+          <MDXProvider components={shortcodes}>
+            <MDXRenderer frontmatter={mdx.frontmatter}>{mdx.body}</MDXRenderer>
+          </MDXProvider>
+        </main>
+        <Footer />
+      </div>
     </>
   )
 }

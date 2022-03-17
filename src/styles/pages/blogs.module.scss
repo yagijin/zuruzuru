@@ -2,7 +2,6 @@
 @import '../mixins.scss';
 
 .blogs {
-  @include media-query-page;
   h2 {
     margin-bottom: 8px;
     margin-top: 8px;

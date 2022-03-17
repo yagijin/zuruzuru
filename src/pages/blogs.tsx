@@ -68,7 +68,7 @@ const BlogsPage = () => {
 
   return (
     <>
-      <Helmet title="Blogs" defer={false} />
+      <Helmet title="Blogs - zuruzuru" defer={false} />
       <OGP
         info={{
           title: 'Blogs - zuruzuru',
@@ -77,28 +77,30 @@ const BlogsPage = () => {
           url: '/blogs',
         }}
       />
-      <main className={styles.blogs}>
+      <div className="page-wrapper">
         <Header link="/blogs" title="All Blogs" />
-        <div className={styles.search}>
-          <label>
-            検索：
-            <input
-              type="text"
-              size={25}
-              value={searchbox}
-              onChange={handleChange}
-            />
-          </label>
-        </div>
-        {dispBlogs.length > 0 ? (
-          dispBlogs.map((blog) => {
-            return <BlogCard key={blog.frontmatter.title} blog={blog} />
-          })
-        ) : (
-          <p>一致する記事がありませんでした。</p>
-        )}
-      </main>
-      <Footer />
+        <main className={styles.blogs}>
+          <div className={styles.search}>
+            <label>
+              検索：
+              <input
+                type="text"
+                size={25}
+                value={searchbox}
+                onChange={handleChange}
+              />
+            </label>
+          </div>
+          {dispBlogs.length > 0 ? (
+            dispBlogs.map((blog) => {
+              return <BlogCard key={blog.frontmatter.title} blog={blog} />
+            })
+          ) : (
+            <p>一致する記事がありませんでした。</p>
+          )}
+        </main>
+        <Footer />
+      </div>
     </>
   )
 }

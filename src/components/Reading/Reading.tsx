@@ -27,7 +27,7 @@ const Reading = () => {
 
   return (
     <div>
-      <Title title="Reading" emoji="📖" />
+      <Title title="Reading" emoji="📕" />
       {latestBook.allMdx.nodes[0] && (
         <>
           <a href={latestBook.allMdx.nodes[0].frontmatter.url}>

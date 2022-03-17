@@ -24,14 +24,16 @@ const IndexPage = () => {
           url: '',
         }}
       />
-      <main className={styles.index}>
-        <Marquee />
-        <Profile />
-        <Reading />
-        <RecentBlogs />
-        <OtherContents />
-      </main>
-      <Footer />
+      <div className="page-wrapper">
+        <main className={styles.index}>
+          <Marquee />
+          <Profile />
+          <Reading />
+          <RecentBlogs />
+          <OtherContents />
+        </main>
+        <Footer />
+      </div>
     </>
   )
 }

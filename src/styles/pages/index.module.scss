@@ -2,8 +2,6 @@
 @import '../mixins.scss';
 
 .index {
-  margin-top: 40px;
-  @include media-query-page();
   color: $grey;
   h1,
   h2,

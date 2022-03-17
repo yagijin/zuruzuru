@@ -1,4 +1,5 @@
 @import './colors.scss';
+@import '../styles/mixins.scss';
 
 body {
   margin: 0;
@@ -22,4 +23,9 @@ a:not(.not-default) {
   &:active {
     color: $primary;
   }
+}
+
+.page-wrapper {
+  @include media-query-page;
+  margin-top: 40px;
 }

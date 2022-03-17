@@ -1,7 +1,6 @@
 @import '../../styles/mixins.scss';
 
 .footer {
-  @include media-query-page();
   display: flex;
   align-items: center;
   flex-direction: column;

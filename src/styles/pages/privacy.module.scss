@@ -1,7 +1,6 @@
 @import '../mixins.scss';
 
 .privacy {
-  @include media-query-page;
   p:first-of-type {
     margin-top: 30px;
   }

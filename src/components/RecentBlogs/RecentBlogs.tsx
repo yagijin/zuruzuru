@@ -1,6 +1,7 @@
 /* default packages */
 import * as React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
+import * as styles from './RecentBlogs.module.scss'
 
 /* components */
 import Title from '../Title'
@@ -42,8 +43,9 @@ const RecentBlogs = () => {
       {allBlogs.allMdx.nodes.map((node: node) => {
         return <BlogCard key={node.frontmatter.title} blog={node} />
       })}
-      <Link to="/blogs" className="not-default">
-        Show All
+
+      <Link to="/blogs" className={styles.link}>
+        {'> Show All'}
       </Link>
     </div>
   )
