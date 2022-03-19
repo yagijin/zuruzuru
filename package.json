@@ -11,11 +11,12 @@
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
+    "ogp": "sh ./tools/ogp/update.sh",
     "deploy": "sh ./tools/ogp/update.sh && gatsby build && gh-pages -d public -b deploy",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "blog": "go run ./tools/blog-initializer/blog-initializer.go",
-    "ogp": "sh ./tools/ogp/update_all_ogp.sh",
+    "ogp-replace": "sh ./tools/ogp/update_all_ogp.sh",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "typecheck": "tsc --noEmit"
   },
