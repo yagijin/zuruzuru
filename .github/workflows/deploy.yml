@@ -3,17 +3,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  deploy-ghpages:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 2
-      - run: git checkout HEAD^
-      - run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-      - run: |
+          fetch-depth: 1
+      - name: checkout
+        run: git checkout HEAD^
+      - name: setup yarn & build
+        run: |
           npm install -g yarn
           yarn
           yarn ogp
