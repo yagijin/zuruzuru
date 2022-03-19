@@ -4,12 +4,11 @@ on:
 
 jobs:
   deploy-ghpages:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 2
-      - name: checkout
         run: git checkout HEAD^
       - name: setup yarn & build
         run: |
@@ -17,9 +16,10 @@ jobs:
           yarn
           yarn ogp
           yarn build
-      - name: Deploy to gh-pages
+      - name: deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/master' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          publish_branch: deploy
