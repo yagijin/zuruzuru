@@ -1,0 +1,28 @@
+---
+title: classとreact-testing-library
+date: 2022-03-31T21:02:06+09:00
+description: 
+url: /blog/2022-03-31-classとreact-testing-library/
+tags:
+  - test
+  - React
+---	
+
+react-testing-libraryで、以下のようなjsxが条件によって期待通りに切り替わっているかテストしたい場合があった。
+```tsx
+{count && <span className="count">{count}</span>}
+```
+まず、react-testing-libraryのドキュメントを読んだけどgetByClassみたいなクエリがない。
+- https://testing-library.com/docs/react-testing-library/cheatsheet
+
+多分、classはどの要素にでもあるものじゃない&一意でないからそれをもとに要素を検証するのは推奨しないという思想があるんじゃないのかなと思う。
+なので、ドキュメント通りに要素にテスト用のidを付与してByTestId系のクエリで取得するか、aria-roleがあるものだったらByrole系のクエリで取得するのが良さそう。
+
+ただ、テスト用にidを付与するような運用はしていないので今回はこんな感じでcontainerからgetElementByClassで無理やり要素を持ってきてテストした。
+
+```tsx
+it('countは描画されない', () => {
+  const { container } = render(<Component />,{})
+  expect(container.getElementByClass("count").length).toBe(0)
+})
+```
