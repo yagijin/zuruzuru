@@ -8,11 +8,12 @@ tags:
   - React
 ---	
 
-react-testing-libraryで、以下のようなjsxが条件によって期待通りに切り替わっているかテストしたい場合があった。
+react-testing-libraryで、コンポーネントの中にある以下のようなjsxが条件によって期待通りに切り替わっているかテストしたい場合があった。
 ```tsx
 {count && <span className="count">{count}</span>}
 ```
-まず、react-testing-libraryのドキュメントを読んだけどgetByClassみたいなクエリがない。
+assertするためにまず、このspanをもってくる必要がある。
+なのでまず、react-testing-libraryのドキュメントを読んだけどgetByClassみたいなクエリがない。
 - https://testing-library.com/docs/react-testing-library/cheatsheet
 
 多分、classはどの要素にでもあるものじゃない&一意でないからそれをもとに要素を検証するのは推奨しないという思想があるんじゃないのかなと思う。
