@@ -26,11 +26,11 @@ const IndexPage = () => {
       />
       <div className="page-wrapper">
         <main className={styles.index}>
-          <Marquee />
           <Profile />
           <Reading />
           <RecentBlogs />
           <OtherContents />
+          <Marquee />
         </main>
         <Footer />
       </div>
