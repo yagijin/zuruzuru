@@ -3,6 +3,7 @@ import * as styles from '../styles/pages/console.module.scss'
 import GoogleFonts from '../components/GoogleFonts'
 import OGP from '../components/OGP'
 import { Helmet } from 'react-helmet'
+import { makeRamen, removeRamens } from '../../lib/make-ramen'
 
 import {
   onEnter,
@@ -10,7 +11,7 @@ import {
   content,
 } from '../../lib/console-page-functions'
 
-export default function Console() {
+const Console = () => {
   const [input, setInput] = useState('')
   const [history, setHistory] = useState<string[]>([])
   const [historyIndex, setHistoryIndex] = useState(0)
@@ -22,6 +23,16 @@ export default function Console() {
   useEffect(() => {
     refStateSL.current = stateSL
   }, [stateSL])
+
+  useEffect(() => {
+    const ramens: HTMLSpanElement[] = []
+    for (let i = 0; i < 30; i++) {
+      ramens.push(makeRamen(document.getElementsByTagName('body')[0]))
+    }
+    return () => {
+      removeRamens(ramens)
+    }
+  }, [])
 
   const consoleClicked = (): void => {
     document.getElementById('inputCommand')?.focus()
@@ -124,7 +135,7 @@ export default function Console() {
           <div
             onClick={() => {
               if (window.confirm('トップページへ移動しますが良いですか？')) {
-                window.location.href = './'
+                window.location.href = '/'
               }
             }}
           ></div>
@@ -182,3 +193,5 @@ export default function Console() {
     </div>
   )
 }
+
+export default Console
