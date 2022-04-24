@@ -24,4 +24,5 @@ declare module '*.scss' {
   export const console: string
   export const contents: string
   export const zuruzuru: string
+  export const main: string
 }
