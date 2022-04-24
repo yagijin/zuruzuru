@@ -6,17 +6,16 @@ import { Link } from 'gatsby'
 type Props = {
   children: React.ReactNode
   link: string
-  sameSite: boolean
 }
 
-const Card = (props: Props) => {
-  return props.sameSite ? (
-    <Link to={props.link} className={styles.link}>
-      <div className={styles.card}>{props.children}</div>
+const Card = ({ link, children }: Props) => {
+  return link.match(/^http/g) ? (
+    <Link to={link} className={styles.link}>
+      <div className={styles.card}>{children}</div>
     </Link>
   ) : (
-    <a href={props.link} className={styles.link}>
-      <div className={styles.card}>{props.children}</div>
+    <a href={link} className={styles.link}>
+      <div className={styles.card}>{children}</div>
     </a>
   )
 }

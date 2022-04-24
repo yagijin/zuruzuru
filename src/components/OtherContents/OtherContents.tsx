@@ -9,7 +9,7 @@ const OtherContents = () => {
       <Title title="その他コンテンツ" emoji="🍜" />
       <ul className={styles.contents}>
         <li>
-          <Card link="/console" sameSite={true}>
+          <Card link="/console">
             <div>
               <img
                 src="./ogp/ogp_console.png"
@@ -20,16 +20,24 @@ const OtherContents = () => {
           </Card>
         </li>
         <li>
-          <Card
-            link="https://chrome.google.com/webstore/detail/rubydocument-template/bnhpmjnifppbemfkmfpgadhfaemgkoia"
-            sameSite={false}
-          >
+          <Card link="https://chrome.google.com/webstore/detail/rubydocument-template/bnhpmjnifppbemfkmfpgadhfaemgkoia">
             <div>
               <img
-                src="./chrome-extension-ruby.png"
+                src="./cards/chrome-extension-ruby.png"
                 alt="chrome拡張のスクリーンショット"
               />
               <p>Chrome Extension</p>
+            </div>
+          </Card>
+        </li>
+        <li>
+          <Card link="/hackathon">
+            <div>
+              <img
+                src="./cards/hackathon.png"
+                alt="ハッカソンで発表している様子"
+              />
+              <p>Hackathons</p>
             </div>
           </Card>
         </li>
