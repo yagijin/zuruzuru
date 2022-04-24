@@ -16,7 +16,7 @@ const Profile = () => {
         <tbody>
           <tr>
             <td>現在</td>
-            <td>Webエンジニア</td>
+            <td>どこかのECサイトのWebエンジニア</td>
           </tr>
           <tr>
             <td>2021</td>
