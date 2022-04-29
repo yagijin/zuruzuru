@@ -9,15 +9,17 @@ tags:
 - Lolipop
 ---	
 
-lolipopマネージドクラウドでrails7のAPIモードでgraphql gemを使用して、graphqlAPIを用意します。最終的にできた環境が[これ](https://github.com/yagijin/rails_server)。
+lolipopマネージドクラウドでrails7のAPIモードでgraphql gemを使用して、graphqlAPIを用意します。
+
+最終的にできた環境が[これ](https://github.com/yagijin/rails_server)です。
 
 lilipopマネージドクラウドでのコントロールパネルの設定については触れないので、事前に https://note.com/mclolipopjp/n/n624c9c20853b を参考に環境変数などの設定をいい感じにしておきます。
-rubyのバージョンについては、僕のマネージドクラウドの環境では2.7.3だったんですが、新しいものに変わったりするらしいので`ruby "~> 2.7.3"`みたいな感じでGemfile書いておくと無難そうでした。。
+rubyのバージョンについては、僕のマネージドクラウドの環境では2.7.3だったんですが、新しいものに変わったりするらしいので`ruby "~> 2.7.3"`みたいな感じでGemfile書いておくと無難そうでした。
 
 ## railsをAPIモードで始める
 
 viewはいらないので、railsをAPIモードで始めます。
-APIモードがどんなモードでどんなメリットがあるかは、railsguideのAPIモードの説明がわかりやすくてよかったのでおすすめします。
+APIモードがどんなモードでどういったメリットがあるかは、railsguideの説明がわかりやすくてよかったのでリンクを貼っておきます。
 - https://railsguides.jp/api_app.html
 
 ```shell
@@ -26,7 +28,7 @@ rails new app_name --api
 
 ## graphqlを導入する
 
-graphqlと同時についでにgraphiqlも使用する。Gemfileに以下を追記する。
+graphqlとついでにgraphiqlも使用するのでGemfileに以下を追記します。
 
 ```ruby
 gem 'graphql'
@@ -58,9 +60,9 @@ config.middleware.use ActionDispatch::Session::CookieStore
 ```
 
 ## デプロイを自動化する
-デプロイは、[このブログ](https://diary.shu-cream.net/GitHub%20ActionsでRailsアプリをロリポップマネージドクラウドにデプロイする)を参考にほぼコピペして、github　actionでpushされるたびに自動デプロイできるようになった。
+デプロイは、[このブログ](https://diary.shu-cream.net/GitHub%20ActionsでRailsアプリをロリポップマネージドクラウドにデプロイする)を参考にほぼコピペして、github actionでpushされるたびに自動デプロイできるようになりました。
 
-自分で追加で加えた変更としては、すでにlolipopマネージドクラウドに上がっているgitリポジトリのデフォルトブランチがmasterで開発しているブランチがmainなので、以下のようにrenameして毎回デプロイしてる。
+自分で追加で加えた変更としては、すでにlolipopマネージドクラウドに上がっているgitリポジトリのデフォルトブランチがmasterだったのに対して開発している環境ではmainなので、以下のようにrenameして毎回デプロイしてます。
 
 ```yml
 	- name: git rename
@@ -73,4 +75,4 @@ config.middleware.use ActionDispatch::Session::CookieStore
 
 
 ## まとめ
-こんなかんじでいつでも壊して遊びながら、railsとgraphqlを学ぶ環境ができたので活用していく。
+いつでも壊して遊びながらrailsとgraphqlを学ぶ環境ができたので活用していく。
