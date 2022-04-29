@@ -1,7 +1,6 @@
 /* default packages */
 import * as React from 'react'
 import * as styles from '../styles/pages/index.module.scss'
-import { Helmet } from 'react-helmet'
 
 /* components */
 import RecentBlogs from '../components/RecentBlogs'
@@ -9,14 +8,13 @@ import Profile from '../components/Profile'
 import Marquee from '../components/Marquee'
 import Footer from '../components/Footer'
 import Reading from '../components/Reading'
-import OGP from '../components/OGP'
+import Head from '../components/Head'
 import OtherContents from '../components/OtherContents'
 
 const IndexPage = () => {
   return (
     <>
-      <Helmet title="zuruzuru" defer={false} />
-      <OGP
+      <Head
         info={{
           title: 'Top - zuruzuru',
           type: 'website',

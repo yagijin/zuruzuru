@@ -12,7 +12,7 @@ type Props = {
   filename?: string
 }
 
-const OGP = (props: Props) => {
+const Head = (props: Props) => {
   const siteURL = 'https://zuruzurura.men'
   return (
     <Helmet>
@@ -30,4 +30,4 @@ const OGP = (props: Props) => {
   )
 }
 
-export default OGP
+export default Head

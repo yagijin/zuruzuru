@@ -1,18 +1,16 @@
 /* default packages */
 import * as React from 'react'
 import * as styles from '../styles/pages/privacy.module.scss'
-import { Helmet } from 'react-helmet'
 
 /* components */
 import Footer from '../components/Footer'
-import OGP from '../components/OGP'
+import Head from '../components/Head'
 import Header from '../components/Header'
 
 const PrivacyPolicy = () => {
   return (
     <>
-      <Helmet title="PrivacyPolicy - zuruzuru" defer={false} />
-      <OGP
+      <Head
         info={{
           title: 'Privacy Policy - zuruzuru',
           type: 'website',

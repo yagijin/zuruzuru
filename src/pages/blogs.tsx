@@ -1,14 +1,13 @@
 /* default packages */
 import React, { useState, useEffect } from 'react'
 import * as styles from '../styles/pages/blogs.module.scss'
-import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 
 /* components */
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import BlogCard from '../components/BlogCard'
-import OGP from '../components/OGP'
+import Head from '../components/Head'
 
 type blog = {
   frontmatter: {
@@ -68,8 +67,7 @@ const BlogsPage = () => {
 
   return (
     <>
-      <Helmet title="Blogs - zuruzuru" defer={false} />
-      <OGP
+      <Head
         info={{
           title: 'Blogs - zuruzuru',
           type: 'website',

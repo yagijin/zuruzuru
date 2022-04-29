@@ -10,7 +10,7 @@ import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Tags from '../components/Tags'
-import OGP from '../components/OGP'
+import Head from '../components/Head'
 import GoogleMap from '../components/GoogleMap'
 import GoogleFonts from '../components/GoogleFonts'
 import Twitter from '../components/TwitterCard'
@@ -35,8 +35,7 @@ type Props = {
 export default function Blog({ data: { mdx } }: Props) {
   return (
     <>
-      <Helmet title={mdx.frontmatter.title} defer={false} />
-      <OGP
+      <Head
         info={{
           title: mdx.frontmatter.title,
           type: 'article',

@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import * as styles from '../styles/pages/console.module.scss'
 import GoogleFonts from '../components/GoogleFonts'
-import OGP from '../components/OGP'
-import { Helmet } from 'react-helmet'
+import Head from '../components/Head'
 import { makeRamen, removeRamens } from '../../lib/make-ramen'
 
 import {
@@ -120,8 +119,7 @@ const Console = () => {
   return (
     <div className={styles.background}>
       <GoogleFonts />
-      <Helmet title="Console - zuruzuru" defer={false} />
-      <OGP
+      <Head
         info={{
           title: 'Console - zuruzuru',
           type: 'website',

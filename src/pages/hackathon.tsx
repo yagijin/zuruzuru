@@ -1,11 +1,10 @@
 /* default packages */
 import * as React from 'react'
 import * as styles from '../styles/pages/hackathon.module.scss'
-import { Helmet } from 'react-helmet'
 
 /* components */
 import Footer from '../components/Footer'
-import OGP from '../components/OGP'
+import Head from '../components/Head'
 import Header from '../components/Header'
 
 const items = [
@@ -55,8 +54,7 @@ const items = [
 const PrivacyPolicy = () => {
   return (
     <>
-      <Helmet title="Hackathon - zuruzuru" defer={false} />
-      <OGP
+      <Head
         info={{
           title: 'Hackathon - zuruzuru',
           type: 'website',
