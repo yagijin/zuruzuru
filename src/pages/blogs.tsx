@@ -92,8 +92,13 @@ const BlogsPage = () => {
             </label>
           </div>
           {dispBlogs.length > 0 ? (
-            dispBlogs.map((blog) => {
-              return <BlogCard key={blog.frontmatter.title} blog={blog} />
+            dispBlogs.map((blog, index) => {
+              return (
+                <>
+                  {index !== 0 && <hr />}
+                  <BlogCard key={blog.frontmatter.title} blog={blog} />
+                </>
+              )
             })
           ) : (
             <p>一致する記事がありませんでした。</p>

@@ -41,9 +41,13 @@ const RecentBlogs = () => {
     <div>
       <Title title="Recent Blogs" emoji="🗒" />
       {allBlogs.allMdx.nodes.map((node: node) => {
-        return <BlogCard key={node.frontmatter.title} blog={node} />
+        return (
+          <>
+            <BlogCard key={node.frontmatter.title} blog={node} />
+            <hr />
+          </>
+        )
       })}
-
       <Link to="/blogs" className={styles.link}>
         {'> Show All'}
       </Link>

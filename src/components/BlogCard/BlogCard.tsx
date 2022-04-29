@@ -25,8 +25,6 @@ const BlogCard = ({ blog }: Props) => {
       </h3>
       <Tags tags={blog.frontmatter.tags} />
       <p>{blog.frontmatter.description}</p>
-      {/* Todo：最後の要素ではhrを非表示にしたい */}
-      <hr />
     </div>
   )
 }
