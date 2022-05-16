@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
+import * as styles from './Reading.module.scss'
 
 /* components */
 import Title from '../Title'
@@ -14,11 +15,8 @@ const Reading = () => {
       ) {
         nodes {
           frontmatter {
-            date(formatString: "MMMM D, YYYY")
             title
-            description
             url
-            tags
           }
         }
       }
@@ -26,16 +24,19 @@ const Reading = () => {
   `)
 
   return (
-    <div>
+    <>
       <Title title="Reading" emoji="📕" />
       {latestBook.allMdx.nodes[0] && (
         <>
-          <a href={latestBook.allMdx.nodes[0].frontmatter.url}>
+          <a
+            href={latestBook.allMdx.nodes[0].frontmatter.url}
+            className={styles['link']}
+          >
             {latestBook.allMdx.nodes[0].frontmatter.title}
           </a>
         </>
       )}
-    </div>
+    </>
   )
 }
 

@@ -11,7 +11,7 @@ const Tags = ({ tags }: Props) => {
       {tags.map((tag) => {
         return (
           <div key={tag} className={styles.tag}>
-            {tag}
+            {`#${tag}`}
           </div>
         )
       })}

@@ -51,7 +51,7 @@ const items = [
   },
 ]
 
-const PrivacyPolicy = () => {
+const Hackathon = () => {
   return (
     <>
       <Head
@@ -89,4 +89,4 @@ const PrivacyPolicy = () => {
   )
 }
 
-export default PrivacyPolicy
+export default Hackathon

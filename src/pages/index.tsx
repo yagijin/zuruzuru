@@ -10,6 +10,7 @@ import Footer from '../components/Footer'
 import Reading from '../components/Reading'
 import Head from '../components/Head'
 import OtherContents from '../components/OtherContents'
+import Todo from '../components/Todo'
 
 const IndexPage = () => {
   return (
@@ -27,6 +28,7 @@ const IndexPage = () => {
           <Profile />
           <Reading />
           <RecentBlogs />
+          <Todo />
           <OtherContents />
           <Marquee />
         </main>

@@ -33,10 +33,14 @@
 }
 
 @mixin simple-linked-button($color) {
-  text-decoration: none;
-  color: $color;
+  text-decoration: none !important;
+  color: $color !important;
   &:hover {
-    color: $red;
-    text-decoration: underline dotted;
+    color: $red !important;
+    text-decoration: underline dotted !important;
   }
+}
+
+@mixin add-shadow(){
+  box-shadow: 1px 1px 2px $grey;
 }

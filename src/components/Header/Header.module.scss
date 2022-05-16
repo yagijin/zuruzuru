@@ -1,4 +1,5 @@
 @import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
 
 .header {
   display: flex;
@@ -18,4 +19,7 @@
 }
 .zuruzuru {
   font-size: x-small;
+}
+.link {
+  @include simple-linked-button($grey);
 }

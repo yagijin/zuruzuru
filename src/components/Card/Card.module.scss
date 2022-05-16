@@ -2,10 +2,12 @@
 @import '../../styles/colors.scss';
 
 .card {
-  border-radius: 1rem;
-  box-shadow: 2px 2px 4px gray;
+  background-color: $background-card;
+  border-radius: 0.5rem;
   padding: 1rem 1rem 0.5rem 1rem;
   max-width: 200px;
+  @include add-shadow();
+
   p {
     margin: 0;
     text-align: center;
@@ -14,10 +16,10 @@
     width: 100%;
     height: auto;
     border: 1px solid $border-line;
-    border-radius: 0.1rem;
+    border-radius: 0.5rem;
   }
   &:hover {
-    box-shadow: 2px 2px 4px black;
+    box-shadow: 1px 1px 2px black;
   }
 }
 

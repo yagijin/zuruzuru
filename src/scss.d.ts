@@ -25,4 +25,8 @@ declare module '*.scss' {
   export const contents: string
   export const zuruzuru: string
   export const main: string
+  export const more: string
+  export const invite: string
+  export const related: string
+  export const limit: string
 }

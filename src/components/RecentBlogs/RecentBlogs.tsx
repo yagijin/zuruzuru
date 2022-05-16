@@ -38,7 +38,7 @@ const RecentBlogs = () => {
   }
 
   return (
-    <div>
+    <>
       <Title title="Recent Blogs" emoji="🗒" />
       {allBlogs.allMdx.nodes.map((node: node) => {
         return (
@@ -49,9 +49,9 @@ const RecentBlogs = () => {
         )
       })}
       <Link to="/blogs" className={styles.link}>
-        {'> Show All'}
+        もっと見る
       </Link>
-    </div>
+    </>
   )
 }
 

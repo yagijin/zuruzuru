@@ -1,24 +1,24 @@
 /** @type {import('gatsby').GatsbyConfig} */
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://zuruzurura.men",
-    title: "blog",
+    siteUrl: 'https://zuruzurura.men',
+    title: 'blog',
   },
   plugins: [
-    "gatsby-plugin-sass",
-    "gatsby-plugin-image",
+    'gatsby-plugin-sass',
+    'gatsby-plugin-image',
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "UA-142042694-3",
+        trackingId: 'UA-142042694-3',
       },
     },
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: "src/images/icon.png",
+        icon: 'src/images/icon.png',
         name: `ズルズル`,
         start_url: `/`,
         theme_color: `#698474`,
@@ -48,8 +48,8 @@ module.exports = {
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.frontmatter.url,
                   guid: site.siteMetadata.siteUrl + node.frontmatter.url,
-                });
-              });
+                })
+              })
             },
             query: `
               {
@@ -65,36 +65,36 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
+            output: '/rss.xml',
             title: "Zuruzuru's RSS Feed",
             // optional configuration to insert feed reference in pages:
             // if `string` is used, it will be used to create RegExp and then test if pathname of
             // current page satisfied this regular expression;
             // if not provided or `undefined`, all pages will have feed reference inserted
-            match: "^/blog/",
+            match: '^/blog/',
           },
         ],
       },
     },
     {
-      resolve: "gatsby-plugin-mdx",
+      resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
-          "gatsby-remark-numbered-footnotes",
+          'gatsby-remark-numbered-footnotes',
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: "language-",
+              classPrefix: 'language-',
               inlineCodeMarker: null,
-              aliases: { js: "javascript", ts: "typescript", sh: "shell" },
+              aliases: { js: 'javascript', ts: 'typescript', sh: 'shell' },
               showLineNumbers: false,
               noInlineHighlight: false,
               // Customize the prompt used in shell output
               // Values below are default
               prompt: {
-                user: "root",
-                host: "localhost",
+                user: 'root',
+                host: 'localhost',
                 global: false,
               },
               // By default the HTML entities <>&'" are escaped.
@@ -117,41 +117,47 @@ module.exports = {
         ],
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: 'images',
+        path: './src/images/',
       },
-      __key: "images",
+      __key: 'images',
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: 'pages',
+        path: './src/pages/',
       },
-      __key: "pages",
+      __key: 'pages',
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        path: `./src/blogs`,
-        name: "blogs",
+        path: `./src/markdowns/blogs`,
+        name: 'blogs',
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        path: `./src/books`,
-        name: "books",
+        path: `./src/markdowns/books`,
+        name: 'books',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `./src/markdowns/todos`,
+        name: 'todos',
       },
     },
     {
       resolve: `gatsby-plugin-typescript`,
     },
   ],
-};
-
+}

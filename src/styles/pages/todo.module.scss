@@ -1,0 +1,18 @@
+@import '../colors.scss';
+
+.main {
+  margin-top: 2rem;
+  color: $grey;
+
+  margin-left: 10%;
+  margin-right: 10%;
+
+  @media (max-width: 749px) {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+.title {
+  margin-top: 3rem;
+}
