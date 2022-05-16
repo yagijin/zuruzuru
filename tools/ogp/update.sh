@@ -2,7 +2,7 @@
 echo "## start: update ogp"
 
 # blogのmarkdownファイルのファイル名を変数に入れる
-filenames="$(ls ./src/blogs)"
+filenames="$(ls ./src/markdowns/blogs)"
 ogps="$(ls ./static/ogp)"
 
 echo "## processing..."
