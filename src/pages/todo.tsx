@@ -17,12 +17,16 @@ const Todo = () => {
     query AllTodosQuery {
       allMdx(
         sort: { fields: frontmatter___date, order: ASC }
-        filter: { fileAbsolutePath: { regex: "/todos/" } }
+        filter: {
+          fileAbsolutePath: { regex: "/todos/" }
+          frontmatter: { done: { eq: false } }
+        }
       ) {
         nodes {
           frontmatter {
             date
             title
+            url
             description
             done
           }
@@ -30,6 +34,7 @@ const Todo = () => {
       }
     }
   `)
+
   return (
     <>
       <Head
@@ -43,7 +48,7 @@ const Todo = () => {
       <div className={styles['main']}>
         <Header title="Todos" link="./" />
         <p>
-          一緒に行く人がいなかったり、あたらしく一緒に行く人を探したいものたち。
+          イベントや場所で一緒に行く人がいなかったり、あたらしく一緒に行く人を探したいものたち。
           話したことない人もぜひ。
         </p>
         <TodoCard
