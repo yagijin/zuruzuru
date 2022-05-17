@@ -17,7 +17,7 @@ assertするためにまず、このspanをもってくる必要がある。
 - https://testing-library.com/docs/react-testing-library/cheatsheet
 
 多分、classはどの要素にでもあるものじゃない&一意でないからそれをもとに要素を検証するのは推奨しないという思想があるんじゃないのかなと思う。
-なので、ドキュメント通りに要素にテスト用のidを付与してByTestId系のクエリで取得するか、aria-roleがあるものだったらByrole系のクエリで取得するのが良さそう。
+なので、ドキュメント通り各要素にテスト用のidを付与してByTestId系のクエリで取得するか、aria-roleがあるものだったらByrole系のクエリで取得するのが良さそう。
 
 ただ、テスト用にidを付与するような運用はしていないので今回はこんな感じでcontainerからgetElementsByClassNameで無理やり要素を持ってきてテストした。
 

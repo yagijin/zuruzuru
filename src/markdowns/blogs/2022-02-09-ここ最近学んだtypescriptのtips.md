@@ -8,7 +8,7 @@ tags:
   - React
 ---
 
-ここ最近学んだTypescriptのtipsのメモ
+ここ最近学んだTypeScriptのtipsのメモ
 
 ## 子プロパティだけを取り出したい
 
@@ -52,13 +52,13 @@ type OptionalProperties<T> = {
 }
 ```
 
- オプショナルにしたいオブジェクトの階層が1階層のみで良いなら、Utility Types の Partialを使うともっと簡単にできる
+ オプショナルにしたいオブジェクトの階層が1階層のみで良いなら、UtilityTypesのPartialを使うともっと簡単にできる
  - https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype
 
 ## js に ts の lint が効いちゃう問題
 
-.eslintrc.json を typescript のデフォルトの設定のまま使ってると javascript に typescript の lint が効いてしまう。
-js の設定をデフォルトにして、ts の場合だけ適宜設定を override したら別々で lint が効いていい感じ。
+.eslintrc.jsonをtypescriptのデフォルトの設定のまま使ってるとjavascriptにtypescriptのlintが効いてしまう。
+jsの設定をデフォルトにして、tsの場合だけ適宜設定をoverrideしたら別々でlintが効いていい感じ。
 
 ```typescript
 {
@@ -75,23 +75,24 @@ js の設定をデフォルトにして、ts の場合だけ適宜設定を over
 }
 ```
 
-## React の children の型
+## Reactのchildrenにpropsを追加する
 
-親コンポーネントから受け取った children に新しい props を追加して子コンポーネントに children として渡したい場合、cloneElementを使って children に props を追加したい。
+親コンポーネントから受け取ったchildrenに新しいpropsを追加して子コンポーネントにchildrenとして渡したい場合、cloneElementを使ってchildrenにpropsを追加したい。
 
 ```typescript
 const newChildren = React.cloneElement(children, properties);
 ```
 
-ただ、cloneElement の children の部分には ReactElement しか渡せないが、ReactChild には ReactText として string と number が許容されている。
+ただ、cloneElementのchildrenの部分にはReactElementしか渡せないが、ReactChildにはReactTextとしてstringとnumberが許容されている。
 
 ```typescript
-type ReactText = string | number;
+type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | undefined;
 type ReactChild = ReactElement | ReactText;
+type ReactText = string | number;
 ```
 
 なのでこれをバリデーションしたい。
-そのときに React には ReactElement の検証用に isValidElement が用意されていて便利だった。
+そのときにReactにはReactElementの検証用にisValidElementが用意されていて便利だった。
 
 - https://ja.reactjs.org/docs/react-api.html#isvalidelement
 
@@ -99,7 +100,7 @@ type ReactChild = ReactElement | ReactText;
 ## double assertion って名前がついてた
 
 本を読んで名前を知ったシリーズ。
-やってはいけない例のこれ double assertion というらしい。
+やってはいけない例のこれdouble assertionというらしい。
 
 ```typescript
 const example = 1 as any as string

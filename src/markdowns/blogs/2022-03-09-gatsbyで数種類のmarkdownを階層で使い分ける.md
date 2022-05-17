@@ -12,8 +12,8 @@ Gatsby.js[^ver]でmarkdownをブログ以外のページのために使用した
 ただ、markdownのfrontmatterの部分の構造が違うので一緒のクエリの結果に含めたくなく[^deny]、クエリの条件かそれ以前の仕組みで分割したかった。
 blogsフォルダに分けてmarkdownを置いてあるのでわざわざファイル名にblogとかそういう文字を含めて検索などはしたくもなかった。
 
-graphiqlのexplorerを眺めてたら`fileAbsolutePath` というのを見つけた。
-これのfilterで正規表現の絞り込みができるregexがパラメータとして使えたのでこれでフォルダの階層を使って絞り込みができた。
+GraphiQLのexplorerを眺めてたら`fileAbsolutePath` というのを見つけた。
+これの`filter`で正規表現の絞り込みができる`regex`をパラメータとして使えたのでこれでフォルダの階層を使って絞り込むことができた。
 
 ```graphql
 query BlogsQuery {
@@ -27,12 +27,12 @@ query BlogsQuery {
 }
 ```
 
-regex以外にも絞り込み条件があったけど今回のケースだとつかえなさそうだった。
+`regex`以外にも絞り込み条件があったけど今回のケースだとつかえなさそうだった。
 - https://www.gatsbyjs.com/docs/graphql-reference/#complete-list-of-possible-operators
 
-`/blogs/`みたいに/も条件に入れておくと/blogs~みたいなmarkdownの時に誤って引っかかることがないので良さそう。
+/blogs/みたいに/も条件に入れておくと/blogs~みたいなmarkdownの時に誤って引っかかることがないので良さそう。
 
-また、他にもconfigでmarkdownが置いてある各階層にラベルをつけるやり方もあるみたいだけどこっちの方が簡単なので採用。
+他にもconfigでmarkdownが置いてある各階層にラベルをつけるやり方もあるみたいだけどこっちの方が簡単なので採用。
 
 [^ver]: v3
 [^deny]: 構造が違うものの結果をフィルタするのが嫌だったということ。

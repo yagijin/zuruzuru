@@ -16,19 +16,19 @@ lolipopマネージドクラウドでrails7のAPIモードでgraphql gemを使�
 lilipopマネージドクラウドでのコントロールパネルの設定については触れないので、事前に https://note.com/mclolipopjp/n/n624c9c20853b を参考に環境変数などの設定をいい感じにしておきます。
 rubyのバージョンについては、僕のマネージドクラウドの環境では2.7.3だったんですが、新しいものに変わったりするらしいので`ruby "~> 2.7.3"`みたいな感じでGemfile書いておくと無難そうでした。
 
-## railsをAPIモードで始める
+## RailsをAPIモードで始める
 
-viewはいらないので、railsをAPIモードで始めます。
-APIモードがどんなモードでどういったメリットがあるかは、railsguideの説明がわかりやすくてよかったのでリンクを貼っておきます。
+viewはいらないので、RailsをAPIモードで始めます。
+APIモードがどんなモードでどういったメリットがあるかは、RailsGuideの説明がわかりやすくてよかったのでリンクを貼っておきます。
 - https://railsguides.jp/api_app.html
 
 ```shell
 rails new app_name --api
 ```
 
-## graphqlを導入する
+## GraphQLを導入する
 
-graphqlとついでにgraphiqlも使用するのでGemfileに以下を追記します。
+GraphQLとついでにGraphiQLも使用するのでGemfileに以下を追記します。
 
 ```ruby
 gem 'graphql'
@@ -36,8 +36,8 @@ gem 'graphql'
 gem 'graphiql-rails'
 gem 'sass-rails'
 ```
-[readme](https://github.com/rmosolgo/graphiql-rails#note-on-api-mode)に従ってgraphiqlの設定を進めていきます。
-まず、graphiqlのpathをroute.rbに追加してアクセスできるようにします。僕の場合、サービスを作るのではなくて勉強に使うのでproductionでも読み込むようにしました。
+[readme](https://github.com/rmosolgo/graphiql-rails#note-on-api-mode)にしたがってGraphiQLの設定を進めていきます。
+まず、GraphiQLのpathをroute.rbに追加してアクセスできるようにします。僕の場合、サービスを作るのではなくて勉強に使うのでproductionでも読み込むようにしました。
 
 ```ruby
 if Rails.env.development? || Rails.env.production?
@@ -52,7 +52,7 @@ sass-rails + Sprockets4をうまく動かすのに追加で設定がいるらし
 //= link graphiql/rails/application.js
 ```
 
-あと、graphiqlをつかうので、APIモードでデフォルトでオフになっているcookieのミドルウェアの設定をconfig/applocation.rbに記述しないと動かなかったです。
+また、APIモードではデフォルトでオフになっているcookieのミドルウェアの設定をconfig/applocation.rbに記述しないと動きませんでした。
 
 ```ruby
 config.middleware.use ActionDispatch::Cookies
@@ -60,9 +60,9 @@ config.middleware.use ActionDispatch::Session::CookieStore
 ```
 
 ## デプロイを自動化する
-デプロイは、[このブログ](https://diary.shu-cream.net/GitHub%20ActionsでRailsアプリをロリポップマネージドクラウドにデプロイする)を参考にほぼコピペして、github actionでpushされるたびに自動デプロイできるようになりました。
+デプロイは、[このブログ](https://diary.shu-cream.net/GitHub%20ActionsでRailsアプリをロリポップマネージドクラウドにデプロイする)を参考にほぼコピペすることで自動化することができました。GitHub Actionを使っており、GitHub上のリモートリポジトリにpushされ次第、ロリポップマネージドクラウドへ自動デプロイされます。
 
-自分で追加で加えた変更としては、すでにlolipopマネージドクラウドに上がっているgitリポジトリのデフォルトブランチがmasterだったのに対して開発している環境ではmainなので、以下のようにrenameして毎回デプロイしてます。
+ymlの内容はすこしだけいじっていて、すでにロリポップマネージドクラウドに上がっているgitリポジトリのデフォルトブランチがmasterだったのに対して、開発している環境ではmainだったので以下のようにrenameして毎回デプロイしています。
 
 ```yml
 	- name: git rename
@@ -71,8 +71,8 @@ config.middleware.use ActionDispatch::Session::CookieStore
 		run: git push -f lolipop master
 ```
 
-よくよく考えると直接sshしてデフォルトブランチをrenameすれば済むので、なんでこんなことしたんだろう過去の自分。
+ただ、よくよく考えると直接sshしてデフォルトブランチをrenameすれば済むので、なんでこんなことしたんだろう過去の自分。
 
 
 ## まとめ
-いつでも壊して遊びながらrailsとgraphqlを学ぶ環境ができたので活用していく。
+いつでも壊して遊びながらrailsとgraphqlを学ぶ環境ができた。
