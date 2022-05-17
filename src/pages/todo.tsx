@@ -46,7 +46,7 @@ const Todo = () => {
         }}
       />
       <div className={styles['main']}>
-        <Header title="Todos" link="./" />
+        <Header title="やりたいこと" link="./" />
         <p>
           イベントや場所で一緒に行く人がいなかったり、あたらしく一緒に行く人を探したいものたち。
           話したことない人もぜひ。
