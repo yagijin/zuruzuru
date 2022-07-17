@@ -23,7 +23,7 @@ const PageLayout: React.FC<Props> = ({
   filename,
   hasHeader = true,
   hasFooter = true,
-}: Props) => {
+}) => {
   return (
     <>
       <Head info={head} filename={filename} />
