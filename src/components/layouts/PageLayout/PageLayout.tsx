@@ -1,8 +1,8 @@
 import * as React from 'react'
 import * as styles from './PageLayout.module.scss'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import Head from '@/components/Head'
+import Header from '../../Header'
+import Footer from '../../Footer'
+import Head from '../../Head'
 
 type Props = {
   children: React.ReactNode
@@ -17,7 +17,7 @@ type Props = {
   hasFooter?: boolean
 }
 
-const PageLayout = ({
+const PageLayout: React.FC<Props> = ({
   children,
   head,
   filename,
