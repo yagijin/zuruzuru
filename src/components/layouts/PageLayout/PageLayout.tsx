@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as styles from './PageLayout.module.scss'
 import Header from '@/organisms/Header'
 import Footer from '@/organisms/Footer'
 import Head from '@/organisms/Head'
@@ -31,7 +30,7 @@ const PageLayout: React.FC<Props> = ({
       <Head info={head} filename={filename} />
       <div className={wrapperClassName}>
         {hasHeader && <Header title={head.title} link="./" />}
-        <main className={styles.main}>{children}</main>
+        <main>{children}</main>
         {hasFooter && <Footer />}
       </div>
     </>

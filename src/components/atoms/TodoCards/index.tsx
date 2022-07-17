@@ -1,1 +1,1 @@
-export { default, props } from './TodoCards'
+export { default } from './TodoCards'

@@ -32,8 +32,8 @@ const TodoCards = ({ todos }: props) => {
               <p className={styles['limit']}>
                 {`期限：${moment(todo.date).local().format(`YYYY-MM-DD`)}`}
               </p>
-              {todo?.url && (
-                <a className={styles['related']} href={todo.url}>
+              {!!todo?.url && (
+                <a href={todo.url}>
                   関連リンク<span style={{ fontSize: 'small' }}>🔗</span>
                 </a>
               )}
