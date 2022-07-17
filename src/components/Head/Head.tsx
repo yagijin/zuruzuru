@@ -19,7 +19,7 @@ const Head = (props: Props) => {
       <title>{props.info.title}</title>
       <meta property="og:url" content={siteURL + props.info.url} />
       <meta property="og:type" content={props.info.type} />
-      <meta property="og:title" content={props.info.title} />
+      <meta property="og:title" content={props.info.title + '- zuruzuru'} />
       <meta property="og:description" content={props.info.description} />
       <meta property="og:site_name" content="zuruzurura.men" />
       <meta

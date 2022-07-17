@@ -9,7 +9,7 @@ const NotFoundPage = () => {
     <>
       <Head
         info={{
-          title: '404 - zuruzuru',
+          title: '404',
           type: 'website',
           description: '404 page of zuruzuru',
           url: '/404',

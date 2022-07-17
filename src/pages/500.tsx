@@ -9,7 +9,7 @@ const InternalServerErrorPage = () => {
     <>
       <Head
         info={{
-          title: '500 - zuruzuru',
+          title: '500',
           type: 'website',
           description: '500 page of zuruzuru',
           url: '/500',

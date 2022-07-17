@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
     <>
       <Head
         info={{
-          title: 'Privacy Policy - zuruzuru',
+          title: 'Privacy Policy',
           type: 'website',
           description: 'privacy policy of zuruzuru',
           url: '/privacy',

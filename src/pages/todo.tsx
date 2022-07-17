@@ -39,7 +39,7 @@ const Todo = () => {
     <>
       <Head
         info={{
-          title: 'Todo - zuruzuru',
+          title: 'Todo',
           type: 'website',
           description: 'やりたいこと一覧',
           url: '/todo',

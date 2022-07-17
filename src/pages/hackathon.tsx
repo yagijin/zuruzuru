@@ -56,7 +56,7 @@ const Hackathon = () => {
     <>
       <Head
         info={{
-          title: 'Hackathon - zuruzuru',
+          title: 'Hackathon',
           type: 'website',
           description: '今までhackathonで作ったものたち',
           url: '/hackathon',

@@ -69,7 +69,7 @@ const BlogsPage = () => {
     <>
       <Head
         info={{
-          title: 'Blogs - zuruzuru',
+          title: 'Blogs',
           type: 'website',
           description: 'blogs',
           url: '/blogs',

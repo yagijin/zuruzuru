@@ -17,7 +17,7 @@ const IndexPage = () => {
     <>
       <Head
         info={{
-          title: 'Top - zuruzuru',
+          title: 'Top',
           type: 'website',
           description: 'yagijinのサイト',
           url: '',

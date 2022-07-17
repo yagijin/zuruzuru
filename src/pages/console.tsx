@@ -121,7 +121,7 @@ const Console = () => {
       <GoogleFonts />
       <Head
         info={{
-          title: 'Console - zuruzuru',
+          title: 'Console',
           type: 'website',
           description: 'console style profile',
           url: '/console',
