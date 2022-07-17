@@ -1,14 +1,14 @@
 import * as React from 'react'
 import * as styles from './SNS.module.scss'
 
-const SNS = () => {
-  const snsList = [
-    { name: 'Github', url: 'https://github.com/yagijin' },
-    { name: 'Twitter', url: 'https://twitter.com/yagijinjin' },
-    { name: 'Instagram', url: 'https://www.instagram.com/yagijimjim' },
-    { name: 'RSS', url: 'https://zuruzurura.men/rss.xml' },
-  ]
+type Props = {
+  snsList: {
+    name: string
+    url: string
+  }[]
+}
 
+const SNS: React.FC<Props> = ({ snsList }) => {
   const sns = snsList.map((value) => {
     return (
       <a

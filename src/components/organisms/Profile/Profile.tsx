@@ -31,7 +31,14 @@ const Profile = () => {
           </tr>
         </tbody>
       </table>
-      <SNS />
+      <SNS
+        snsList={[
+          { name: 'Github', url: 'https://github.com/yagijin' },
+          { name: 'Twitter', url: 'https://twitter.com/yagijinjin' },
+          { name: 'Instagram', url: 'https://www.instagram.com/yagijimjim' },
+          { name: 'RSS', url: 'https://zuruzurura.men/rss.xml' },
+        ]}
+      />
       {/*<p className="profile-likes">🏕🚲🍜🏸🏐🧙☖♞⚆🎴🎲🎲</p>*/}
     </>
   )

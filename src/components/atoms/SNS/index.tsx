@@ -1,2 +1,1 @@
-import SNS from "./SNS"
-export default SNS
+export { default } from './SNS'
