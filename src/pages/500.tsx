@@ -11,12 +11,10 @@ const InternalServerErrorPage = () => {
         url: '/500',
       }}
     >
-      <>
-        <h1>⚠️ Internal Server Error</h1>
-        <p>
-          サーバーで何か問題が起きています。しばらくしてからもう一度訪問してください。
-        </p>
-      </>
+      <h1>⚠️ Internal Server Error</h1>
+      <p>
+        サーバーで何か問題が起きています。しばらくしてからもう一度訪問してください。
+      </p>
     </PageLayout>
   )
 }

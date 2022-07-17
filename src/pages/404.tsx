@@ -11,10 +11,8 @@ const NotFoundPage = () => {
         url: '/404',
       }}
     >
-      <>
-        <h1>Page Not Found</h1>
-        <p>お探しのページは見つかりませんでした。</p>
-      </>
+      <h1>Page Not Found</h1>
+      <p>お探しのページは見つかりませんでした。</p>
     </PageLayout>
   )
 }
