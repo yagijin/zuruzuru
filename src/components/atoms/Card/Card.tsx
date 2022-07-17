@@ -3,7 +3,7 @@ import * as React from 'react'
 import * as styles from './Card.module.scss'
 import { Link } from 'gatsby'
 
-type Props = {
+export type Props = {
   children: React.ReactNode
   link: string
 }
