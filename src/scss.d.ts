@@ -29,4 +29,5 @@ declare module '*.scss' {
   export const invite: string
   export const related: string
   export const limit: string
+  export const menu: string
 }

@@ -1,6 +1,25 @@
 @import '../styles/mixins.scss';
 @import '../styles/colors.scss';
 
+.zuruzuru {
+  margin-bottom: 0;
+  /* mobile */
+  @media (max-width: 749px) {
+    margin-bottom: 1rem;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  /* mobile */
+  @media (max-width: 749px) {
+    gap: 0.2rem;
+  }
+}
+
 .blog {
   h2,
   h3 {
