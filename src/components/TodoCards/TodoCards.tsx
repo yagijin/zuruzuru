@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as styles from './TodoCard.module.scss'
+import * as styles from './TodoCards.module.scss'
 import moment from 'moment'
 
 export type props = {
@@ -13,7 +13,7 @@ export type props = {
       }[]
 }
 
-const TodoCard = ({ todos }: props) => {
+const TodoCards = ({ todos }: props) => {
   return (
     <div className={styles['container']}>
       {todos
@@ -48,4 +48,4 @@ const TodoCard = ({ todos }: props) => {
   )
 }
 
-export default TodoCard
+export default TodoCards

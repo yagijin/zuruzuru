@@ -4,8 +4,8 @@ import * as styles from './Todo.module.scss'
 
 /* components */
 import Title from '../Title'
-import TodoCard from '../TodoCard'
-import { props } from '../TodoCard/TodoCard'
+import TodoCards from '../TodoCards'
+import { props } from '../TodoCards/TodoCards'
 
 type todo = { frontmatter: props['todos'][0] }
 
@@ -36,7 +36,7 @@ const Todo = () => {
   return (
     <>
       <Title title="やりたいこと" emoji="✈️" />
-      <TodoCard
+      <TodoCards
         todos={todos.allMdx.nodes.map((todo: todo) => todo.frontmatter) ?? []}
       />
       <Link to="/todo" className={styles['more']}>
