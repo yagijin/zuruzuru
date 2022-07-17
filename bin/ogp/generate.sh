@@ -17,7 +17,7 @@ convert \
 -background none caption:"$title" mask.png
 
 # デフォルト画像とマスク画像を重ねて出力
-composite -compose over ./mask.png ./tools/ogp/materials/template.png ./static/ogp/ogp_"$1".png
+composite -compose over ./mask.png ./bin/ogp/materials/template.png ./static/ogp/ogp_"$1".png
 
 # マスク画像を削除
 rm ./mask.png

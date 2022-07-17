@@ -13,7 +13,7 @@ do
   # すでにogp画像が存在する場合はなにもしない
   # 存在しない場合、genarate.shで作成する
   if [ ! -e "./static/ogp/ogp_$basename.png" ];then
-    sh ./tools/ogp/generate.sh $basename  
+    sh ./bin/ogp/generate.sh $basename  
   fi
 done
 
