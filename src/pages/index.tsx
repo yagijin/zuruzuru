@@ -20,6 +20,7 @@ const IndexPage = () => {
         description: 'yagijinのサイト',
         url: '',
       }}
+      hasHeader={false}
     >
       <div className={styles.index}>
         <Profile />
