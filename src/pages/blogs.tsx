@@ -1,13 +1,8 @@
-/* default packages */
 import React, { useState, useEffect } from 'react'
-import * as styles from '../styles/pages/blogs.module.scss'
 import { graphql, useStaticQuery } from 'gatsby'
-
-/* components */
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import * as styles from '@/styles/pages/blogs.module.scss'
+import PageLayout from '@/layouts/PageLayout'
 import BlogCard from '../components/BlogCard'
-import Head from '../components/Head'
 
 type blog = {
   frontmatter: {
@@ -66,45 +61,40 @@ const BlogsPage = () => {
   }
 
   return (
-    <>
-      <Head
-        info={{
-          title: 'Blogs',
-          type: 'website',
-          description: 'blogs',
-          url: '/blogs',
-        }}
-      />
-      <div className="page-wrapper-60">
-        <Header link="/blogs" title="All Blogs" />
-        <main className={styles.blogs}>
-          <div className={styles.search}>
-            <label>
-              検索：
-              <input
-                type="text"
-                size={25}
-                value={searchbox}
-                onChange={handleChange}
-              />
-            </label>
-          </div>
-          {dispBlogs.length > 0 ? (
-            dispBlogs.map((blog, index) => {
-              return (
-                <>
-                  {index !== 0 && <hr />}
-                  <BlogCard key={blog.frontmatter.title} blog={blog} />
-                </>
-              )
-            })
-          ) : (
-            <p>一致する記事がありませんでした。</p>
-          )}
-        </main>
-        <Footer />
+    <PageLayout
+      head={{
+        title: 'Blogs',
+        type: 'website',
+        description: 'blogs',
+        url: '/blogs',
+      }}
+    >
+      <div className={styles.blogs}>
+        <div className={styles.search}>
+          <label>
+            検索：
+            <input
+              type="text"
+              size={25}
+              value={searchbox}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        {dispBlogs.length > 0 ? (
+          dispBlogs.map((blog, index) => {
+            return (
+              <>
+                {index !== 0 && <hr />}
+                <BlogCard key={blog.frontmatter.title} blog={blog} />
+              </>
+            )
+          })
+        ) : (
+          <p>一致する記事がありませんでした。</p>
+        )}
       </div>
-    </>
+    </PageLayout>
   )
 }
 
