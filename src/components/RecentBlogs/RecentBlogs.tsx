@@ -43,7 +43,7 @@ const RecentBlogs = () => {
       {allBlogs.allMdx.nodes.map((node: node) => {
         return (
           <>
-            <BlogCard key={node.frontmatter.title} blog={node} />
+            <BlogCard key={node.frontmatter.title} blog={node.frontmatter} />
             <hr />
           </>
         )

@@ -86,7 +86,10 @@ const BlogsPage = () => {
             return (
               <>
                 {index !== 0 && <hr />}
-                <BlogCard key={blog.frontmatter.title} blog={blog} />
+                <BlogCard
+                  key={blog.frontmatter.title}
+                  blog={blog.frontmatter}
+                />
               </>
             )
           })
