@@ -23,7 +23,7 @@ const IndexPage = () => {
           url: '',
         }}
       />
-      <div className="page-wrapper">
+      <div className="page-wrapper-60">
         <main className={styles.index}>
           <Profile />
           <Reading />

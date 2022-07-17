@@ -44,7 +44,7 @@ export default function Blog({ data: { mdx } }: Props) {
         }}
         filename={`ogp_${mdx.frontmatter.title.toLocaleLowerCase()}.png`}
       />
-      <div className="page-wrapper">
+      <div className="page-wrapper-60">
         <Header link="/blogs" title="Blog" />
         <main className={styles.blog}>
           <p className={styles.date}>{mdx.frontmatter.date}</p>

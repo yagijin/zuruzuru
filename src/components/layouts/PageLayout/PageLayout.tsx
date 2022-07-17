@@ -15,19 +15,21 @@ type Props = {
   filename?: string
   hasHeader?: boolean
   hasFooter?: boolean
+  wrapperClassName?: string
 }
 
 const PageLayout: React.FC<Props> = ({
   children,
   head,
   filename,
+  wrapperClassName = 'page-wrapper-60',
   hasHeader = true,
   hasFooter = true,
 }) => {
   return (
     <>
       <Head info={head} filename={filename} />
-      <div className="page-wrapper">
+      <div className={wrapperClassName}>
         {hasHeader && <Header title={head.title} link="./" />}
         <main className={styles.main}>{children}</main>
         {hasFooter && <Footer />}

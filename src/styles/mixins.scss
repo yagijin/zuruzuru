@@ -1,16 +1,16 @@
 @import './colors.scss';
 
 /* template */
-@mixin media-query-page() {
+@mixin media-query-page($desktop, $mobile) {
   /* desktop */
   @media (min-width: 750px) {
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: $desktop;
+    margin-right: $desktop;
   }
   /* mobile */
   @media (max-width: 749px) {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: $mobile;
+    margin-right: $mobile;
   }
 }
 @mixin centering() {

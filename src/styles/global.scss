@@ -25,7 +25,22 @@ a:not(.not-default) {
   }
 }
 
-.page-wrapper {
-  @include media-query-page;
+.page-wrapper-60 {
+  @include media-query-page(20%, 5%);
+  margin-top: 40px;
+}
+
+.page-wrapper-70 {
+  @include media-query-page(15%, 5%);
+  margin-top: 40px;
+}
+
+.page-wrapper-80 {
+  @include media-query-page(10%, 5%);
+  margin-top: 40px;
+}
+
+.page-wrapper-90 {
+  @include media-query-page(5%, 5%);
   margin-top: 40px;
 }

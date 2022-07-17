@@ -75,7 +75,7 @@ const BlogsPage = () => {
           url: '/blogs',
         }}
       />
-      <div className="page-wrapper">
+      <div className="page-wrapper-60">
         <Header link="/blogs" title="All Blogs" />
         <main className={styles.blogs}>
           <div className={styles.search}>
