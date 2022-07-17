@@ -21,14 +21,14 @@ const IndexPage = () => {
         url: '',
       }}
     >
-      <main className={styles.index}>
+      <div className={styles.index}>
         <Profile />
         <Reading />
         <RecentBlogs />
         <Todo />
         <OtherContents />
         <Marquee />
-      </main>
+      </div>
     </PageLayout>
   )
 }
