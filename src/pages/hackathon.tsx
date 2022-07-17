@@ -1,11 +1,6 @@
-/* default packages */
 import * as React from 'react'
-import * as styles from '../styles/pages/hackathon.module.scss'
-
-/* components */
-import Footer from '../components/Footer'
-import Head from '../components/Head'
-import Header from '../components/Header'
+import * as styles from '@/styles/pages/hackathon.module.scss'
+import PageLayout from '@/layouts/PageLayout'
 
 const items = [
   {
@@ -53,39 +48,35 @@ const items = [
 
 const Hackathon = () => {
   return (
-    <>
-      <Head
-        info={{
-          title: 'Hackathon',
-          type: 'website',
-          description: '今までhackathonで作ったものたち',
-          url: '/hackathon',
-        }}
-      />
+    <PageLayout
+      head={{
+        title: 'Hackathon',
+        type: 'website',
+        description: '今までhackathonで作ったものたち',
+        url: '/hackathon',
+      }}
+      wrapperClassName="page-wrapper-80"
+    >
+      <p>ハッカソンなどのイベントに参加して作成してきたものたち</p>
       <div className={styles['main']}>
-        <Header title="Hackathons" link="./" />
-        <p>ハッカソンなどのイベントに参加して作成してきたものたち</p>
-        <main>
-          {items.map((item) => {
-            return (
-              <div className={styles['card']} key={item.name}>
-                <div>
-                  <img src={item.image} alt={`${item.name}のサムネイル`} />
-                </div>
-                <p>{item.name}</p>
-                <article>{item.description}</article>
-                {item?.link && (
-                  <a href={item.link} target="_blank" rel="noreferrer">
-                    👉 Link
-                  </a>
-                )}
+        {items.map((item) => {
+          return (
+            <div className={styles['card']} key={item.name}>
+              <div>
+                <img src={item.image} alt={`${item.name}のサムネイル`} />
               </div>
-            )
-          })}
-        </main>
-        <Footer />
+              <p>{item.name}</p>
+              <article>{item.description}</article>
+              {item?.link && (
+                <a href={item.link} target="_blank" rel="noreferrer">
+                  👉 Link
+                </a>
+              )}
+            </div>
+          )
+        })}
       </div>
-    </>
+    </PageLayout>
   )
 }
 
