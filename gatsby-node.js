@@ -37,3 +37,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 }
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        '@/atoms': path.resolve(__dirname, 'src/components/atoms'),
+        '@/organisms': path.resolve(__dirname, 'src/components/organisms'),
+        '@/layouts': path.resolve(__dirname, 'src/components/layouts/'),
+        '@/images': path.resolve(__dirname, 'src/images'),
+        '@/styles': path.resolve(__dirname, 'src/styles'),
+      },
+    },
+  })
+}
