@@ -1,0 +1,8 @@
+@import '@/styles/colors.scss';
+@import '@/styles/mixins.scss';
+
+.link {
+  padding: 0.5rem 0 0 1rem;
+  display: inline-block;
+  @include simple-linked-button($grey);
+}

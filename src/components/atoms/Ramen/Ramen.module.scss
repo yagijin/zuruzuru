@@ -1,0 +1,11 @@
+@import '@/styles/colors.scss';
+@import '@/styles/mixins.scss';
+
+.container {
+  display: inline;
+  span:last-of-type {
+    color: $grey;
+    font-weight: bold;
+    font-size: x-small;
+  }
+}

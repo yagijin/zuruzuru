@@ -3,8 +3,7 @@ import * as React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import * as styles from '@/styles/pages/todo.module.scss'
 import PageLayout from '@/layouts/PageLayout'
-import TodoCards from '../components/TodoCards'
-import { props } from '../components/TodoCards/TodoCards'
+import TodoCards, { props } from '@/atoms/TodoCards'
 
 type todo = { frontmatter: props['todos'][0] }
 

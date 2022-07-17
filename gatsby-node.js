@@ -47,6 +47,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         '@/layouts': path.resolve(__dirname, 'src/components/layouts/'),
         '@/images': path.resolve(__dirname, 'src/images'),
         '@/styles': path.resolve(__dirname, 'src/styles'),
+        '@/lib': path.resolve(__dirname, 'lib'),
       },
     },
   })

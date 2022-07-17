@@ -1,0 +1,24 @@
+@import '@/styles/colors.scss';
+
+.marquee {
+  overflow: hidden;
+}
+.marquee > div {
+  transform: translateX(100%);
+  animation: animation 20s linear infinite;
+}
+@keyframes animation {
+  0% {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  100% {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+.emoji {
+  font-size: x-large;
+}

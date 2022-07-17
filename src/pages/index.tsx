@@ -4,12 +4,12 @@ import * as styles from '@/styles/pages/index.module.scss'
 
 /* components */
 import PageLayout from '@/layouts/PageLayout'
-import RecentBlogs from '../components/RecentBlogs'
-import Profile from '../components/Profile'
-import Marquee from '../components/Marquee'
-import Reading from '../components/Reading'
-import OtherContents from '../components/OtherContents'
-import Todo from '../components/Todo'
+import RecentBlogs from '@/organisms/RecentBlogs'
+import Profile from '@/organisms/Profile'
+import Marquee from '@/atoms/Marquee'
+import Reading from '@/organisms/Reading'
+import OtherContents from '@/organisms/OtherContents'
+import Todo from '@/organisms/Todo'
 
 const IndexPage = () => {
   return (

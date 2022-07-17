@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import * as styles from '@/styles/pages/blogs.module.scss'
 import PageLayout from '@/layouts/PageLayout'
-import BlogCard from '../components/BlogCard'
+import BlogCard from '@/atoms/BlogCard'
 
 type blog = {
   frontmatter: {

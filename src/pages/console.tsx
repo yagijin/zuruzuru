@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
-import * as styles from '../styles/pages/console.module.scss'
-import GoogleFonts from '../components/GoogleFonts'
-import Head from '../components/Head'
+import * as styles from '@/styles/pages/console.module.scss'
+import GoogleFonts from '@/atoms/GoogleFonts'
+import Head from '@/organisms/Head'
 import { makeRamen, removeRamens } from '../../lib/make-ramen'
 
 import {

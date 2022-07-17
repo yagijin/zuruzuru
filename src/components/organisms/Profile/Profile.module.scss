@@ -1,0 +1,28 @@
+@import '@/styles/colors.scss';
+
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin-bottom: 20px;
+  img {
+    border-radius: 48%;
+    border: 3px solid $secondary;
+    margin: 0 40px 0 0;
+  }
+  h1 {
+    color: $black;
+    font-weight: 900;
+  }
+}
+.career {
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  td {
+    vertical-align: top;
+  }
+  td:nth-of-type(2) {
+    padding-left: 10px;
+  }
+}

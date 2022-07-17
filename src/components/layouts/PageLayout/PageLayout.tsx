@@ -1,8 +1,8 @@
 import * as React from 'react'
 import * as styles from './PageLayout.module.scss'
-import Header from '../../Header'
-import Footer from '../../Footer'
-import Head from '../../Head'
+import Header from '@/organisms/Header'
+import Footer from '@/organisms/Footer'
+import Head from '@/organisms/Head'
 
 type Props = {
   children: React.ReactNode

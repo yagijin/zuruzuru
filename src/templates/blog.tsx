@@ -7,11 +7,11 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 /* components */
 import PageLayout from '@/layouts/PageLayout'
-import Ramen from '../components/Ramen'
-import Tags from '../components/Tags'
-import GoogleMap from '../components/GoogleMap'
-import GoogleFonts from '../components/GoogleFonts'
-import Twitter from '../components/TwitterCard'
+import Ramen from '@/atoms/Ramen'
+import Tags from '@/atoms/Tags'
+import GoogleMap from '@/atoms/GoogleMap'
+import GoogleFonts from '@/atoms/GoogleFonts'
+import Twitter from '@/atoms/TwitterCard'
 
 const shortcodes = { Link, GoogleFonts, GoogleMap, Twitter }
 
