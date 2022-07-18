@@ -25,7 +25,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-feed-mdx`,
+      resolve: `gatsby-plugin-feed`,
       options: {
         query: `
           {
