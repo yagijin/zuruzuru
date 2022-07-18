@@ -3,6 +3,9 @@ const getRandomNum = (min: number, max: number) => {
 }
 
 export const makeRamen = (area: HTMLElement) => {
+  if (area == null) {
+    return
+  }
   const ramen = document.createElement('span')
   ramen.innerHTML = '🍜'
   ramen.style.position = 'absolute'

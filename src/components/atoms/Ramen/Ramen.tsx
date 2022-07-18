@@ -5,7 +5,7 @@ import { makeRamen } from '@/lib/make-ramen'
 const Ramen = () => {
   const handleOnClick = () => {
     for (let i = 0; i < 3; i++) {
-      makeRamen(document.getElementsByTagName('body')[0])
+      makeRamen(document.getElementsByTagName('body')?.[0])
     }
   }
 
