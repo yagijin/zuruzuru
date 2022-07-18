@@ -1,12 +1,18 @@
 import React from 'react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 import Card, { Props } from './Card'
+
 export default {
   component: Card,
   title: 'Atoms/Card',
-}
-const Template = (args: Props) => <Card {...args} />
+} as ComponentMeta<typeof Card>
 
-export const Default = Template.bind({
+const Template: ComponentStory<typeof Card> = (args: Props) => (
+  <Card {...args} />
+)
+
+export const Default = Template.bind({})
+Default.args = {
   link: 'https://google.com',
   children: <p>hello</p>,
-})
+}

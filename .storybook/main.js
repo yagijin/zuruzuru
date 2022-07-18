@@ -1,5 +1,4 @@
 // Storybook公式のtsconfigを読み込む設定 https://storybook.js.org/docs/react/builders/webpack
-const path = require('path')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 module.exports = {
@@ -21,27 +20,33 @@ module.exports = {
     config.module.rules[0].use[0].options.plugins.push(
       require.resolve('babel-plugin-remove-graphql-queries')
     )
-    // Storybook公式のtsconfigを読み込む設定 https://storybook.js.org/docs/react/builders/webpack
-    config.resolve.plugins = [
-      ...(config.resolve.plugins || []),
-      new TsconfigPathsPlugin(),
-    ]
     // https://stackoverflow.com/a/60832635
     config.module.rules.push({
       rules: [
         {
           test: /\.s[ac]ss$/i,
           use: [
-            // Creates `style` nodes from JS strings
             'style-loader',
-            // Translates CSS into CommonJS
-            'css-loader',
-            // Compiles Sass to CSS
+            {
+              loader: 'css-loader',
+              options: {
+                modules: {
+                  localIdentName: '[path]-[local]-[hash:base64:5]',
+                },
+              },
+            },
             'sass-loader',
           ],
         },
       ],
     })
+    // Storybook公式のtsconfigを読み込む設定 https://storybook.js.org/docs/react/builders/webpack
+    config.resolve.plugins = [
+      ...(config.resolve.plugins || []),
+      new TsconfigPathsPlugin({
+        extensions: config.resolve.extensions,
+      }),
+    ]
     return config
   },
 }
