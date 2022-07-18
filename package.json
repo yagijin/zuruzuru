@@ -17,6 +17,7 @@
     "clean": "gatsby clean",
     "blog": "go run ./bin/blog-initializer/blog-initializer.go",
     "ogp-replace": "sh ./bin/ogp/update_all_ogp.sh",
+    "opt-images": "sh bin/image-optimizer/optimize-all.sh ./static/img",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "typecheck": "tsc --noEmit"
   },

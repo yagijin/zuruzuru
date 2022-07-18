@@ -4,24 +4,35 @@ https://zuruzurura.men
 
 ## commands
 
-```shell
-# start development server
-npm run develop
+### yarn develop
 
-# build from src
-npm run build
+開発環境を立ち上げる。一緒にgraphiqlも立ち上がる。
 
-# make new blog from template
-npm run blog
+### yarn build
 
-# update ogp
-npm run ogp
-```
+ビルドを行う。
+
+### yarn deploy
+
+buildを行い、その結果をgh-pagesコマンドを使用してgithub pagesへデプロイする。
+
+### yarn lint
+
+eslintを実行
+
+### yarn blog
+
+blogのテンプレートとなるmarkdownファイルを作成。
+
+### yarn opt-images
+
+ ブログ画像のexif情報などを削除する。
 
 ## コンポーネントの粒度
 
 名前はatomicdesignっぽくなっているが実際は独自の分類をしている。
 ### Atoms
+
 ボタンやカードなど単純な粒度のもの。データやロジックは入れてはいけない。
 
 ### Organisms
