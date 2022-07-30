@@ -3,8 +3,8 @@ import * as React from 'react'
 import * as styles from './Keyboard.module.scss'
 
 // 参考：https://developer.mozilla.org/ja/docs/Web/HTML/Element/kbd
-const Keyboard = ({ text }: { text: string }) => {
-  return <kbd className={styles['key']}>{text}</kbd>
+const Keyboard = ({ children }: { children: string }) => {
+  return <kbd className={styles['key']}>{children}</kbd>
 }
 
 export default Keyboard
