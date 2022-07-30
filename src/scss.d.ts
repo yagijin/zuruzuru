@@ -30,4 +30,5 @@ declare module '*.scss' {
   export const related: string
   export const limit: string
   export const menu: string
+  export const key: string
 }
