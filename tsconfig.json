@@ -38,6 +38,9 @@
       "@/layouts/*": [
         "src/components/layouts/*"
       ],
+      "@/tags/*": [
+        "src/components/tags/*"
+      ],
       "@/images/*": [
         "src/images/*"
       ],

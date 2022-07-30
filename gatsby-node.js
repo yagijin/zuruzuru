@@ -45,6 +45,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         '@/atoms': path.resolve(__dirname, 'src/components/atoms'),
         '@/organisms': path.resolve(__dirname, 'src/components/organisms'),
         '@/layouts': path.resolve(__dirname, 'src/components/layouts/'),
+        '@/tags': path.resolve(__dirname, 'src/components/tags'),
         '@/images': path.resolve(__dirname, 'src/images'),
         '@/styles': path.resolve(__dirname, 'src/styles'),
         '@/lib': path.resolve(__dirname, 'lib'),
