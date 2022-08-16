@@ -24,6 +24,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "dayjs": "^1.11.5",
     "gatsby": "^4.9.2",
     "gatsby-plugin-feed": "^4.18.1",
     "gatsby-plugin-google-analytics": "^4.9.0",
@@ -39,7 +40,6 @@
     "gatsby-remark-prismjs": "^6.9.0",
     "gatsby-source-filesystem": "^4.9.1",
     "gatsby-transformer-sharp": "^4.9.0",
-    "moment": "^2.29.3",
     "prismjs": "^1.27.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
