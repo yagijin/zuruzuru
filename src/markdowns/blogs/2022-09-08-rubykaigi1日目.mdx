@@ -1,0 +1,59 @@
+---
+title: RubyKaigi1日目
+date: 2022-09-08T22:31:12+09:00
+description: RubyKaigi2022にリモートで参加した。その1日目の記録。
+url: /blog/2022-09-08-rubykaigi1日目/
+tags:
+- Ruby
+- RubyKaigi
+- カンファレンス
+---	
+
+RubyKaigi2022にリモートで参加した。
+
+その1日目の記録。
+
+聞いたセッションごとに書いていく。
+
+## RubyMeetsWebAssembly
+
+[資料](https://speakerdeck.com/kateinoigakukun/ruby-meets-webassembly)
+
+wasmはjsより早く動かせるからいいよねくらいのものだと思っていたけど、ブラウザで動けばプラットフォームを意識せずに動かせることやsandboxなことなど別の側面のメリットもあってwasmに俄然興味が出てきた。
+
+[irbのデモサイト](https://irb-wasm.vercel.app/)を用意してくれていて、遊ぶことができた。システム時間などは使えないのでTime.nowみたいなのは内部的にjsのDateを呼んでるらしい。また、WASIというwasmでのシステムコールの規格があることを初めて知った。
+
+
+## Ruby Archaeology: Forgotten web frameworks
+
+RubyのWebフレームワークの歴史っぽい内容だったと思うけど、英語力がなさすぎて確信が持てないのでこのセッションの詳細は書かないでおく😇
+
+もう少し英語できるようになりたい、逆にRubyの日本のコミュニティが大きいから日本語で聞けているセッションもあるんだなとも感じることができた。
+
+## Types teaches success, what will we do?
+
+RBSとSteepがRuby3.0でRuby本体に入ったので、エディタの補完などの型情報を使った静的解析の恩恵をRubyでも受けられるようになった。
+
+TypeScriptの[DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)みたいな感じで、Rubyにも[gem_rbs_collection](https://github.com/ruby/gem_rbs_collection)というgemの型情報を管理するリポジトリがあるとのことだった。
+
+まだgem_rbs_collectionでは44個のgemの型情報しかないらしいので、コントリビューションを積極的にして行きましょうという流れで詳しいコントリビューションの仕方の解説があった。
+
+ossへのコントリビューションの入り口にもちょうど良さそう。
+
+## Tools for Providing rich user experience in debugger
+
+別の用事があって聞きながら作業をしていたので半分くらい聞けなかった。
+
+[debug](https://github.com/ruby/debug)のコントリビューターの方によるChromeとVSCodeでのRubyのデバッグについてのセッションだった。
+結構リッチなことができてActiveRecordの中身をいい感じに見れるようになっていたり、デバッグ時の情報をグラフにして可視化したりするデモがあった。
+
+## TRICK 2022 (Returns)
+
+一言で説明すると、面白いコードを書くコンテストだった。
+
+優勝した作品は、実行されているコードが金魚鉢状になっていてその中を金魚が泳ぐというもので、金魚の動きで壊した自分自身のコードを誤り訂正符号を実装して復元するというアイデアでぶっ飛んでいて面白かった。
+
+自分としては`<input type=“image”>`で[座標が取れる](https://developer.mozilla.org/ja/docs/Web/HTML/Element/input/image#点の_x_および_y_のデータの使用)ことなど面白い豆知識の収穫などもあって勉強になった。
+
+[GitHubに受賞した全作品](https://github.com/tric/trick2022)が公開されている。
+
