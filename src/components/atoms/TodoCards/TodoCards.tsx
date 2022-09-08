@@ -16,7 +16,6 @@ export type props = {
 const TodoCards = ({ todos }: props) => {
   const now = dayjs()
   const items = todos.filter((todo: todo['frontmatter']) => {
-    console.log(todo.title)
     return dayjs(todo.date).isAfter(now)
   })
   const createTweetParams = (title: string) => {
