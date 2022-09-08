@@ -1,0 +1,1 @@
+{"errors":[{"message":"Variable \"$today\" of required type \"Date!\" was not provided.","locations":[{"line":1,"column":21}]}]}
