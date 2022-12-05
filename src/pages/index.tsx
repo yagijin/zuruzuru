@@ -24,7 +24,6 @@ const IndexPage = () => {
     >
       <div className={styles.index}>
         <Profile />
-        <Reading />
         <RecentBlogs />
         <Todo />
         <OtherContents />
