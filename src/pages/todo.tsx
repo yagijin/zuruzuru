@@ -41,11 +41,9 @@ const Todo = () => {
       wrapperClassName="page-wrapper-80"
     >
       <div className={styles['main']}>
-        <h3 className={styles['title']}>やりたいことリスト</h3>
         <p>
-          イベントや場所で一緒に行く人がいなかったり、あたらしく一緒に行く人を探したいものたちのリスト。
+          イベントや場所で一緒に行く人がいなかったり、あたらしく一緒に行く人を探したいものたちのリスト。話したことない人でもどうぞ。
         </p>
-        <p>話したことない人もぜひ。</p>
         <TodoCards
           todos={todos.allMdx.nodes.map((todo: todo) => todo.frontmatter) ?? []}
         />
