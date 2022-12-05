@@ -145,13 +145,6 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `./src/markdowns/books`,
-        name: 'books',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
         path: `./src/markdowns/todos`,
         name: 'todos',
       },
