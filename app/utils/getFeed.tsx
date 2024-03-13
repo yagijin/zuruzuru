@@ -10,6 +10,7 @@ export type Feeds = (Feed & { type: FeedKey })[]
 
 type FeedWithURL = {
   url: string
+  feedPath: string
   feeds: Feeds
 }
 
@@ -19,15 +20,18 @@ type FeedData = {
 
 const data: FeedData = {
   note: {
-    url: 'https://note.com/yagijin/rss',
+    url: 'https://note.com/yagijin',
+    feedPath: '/rss',
     feeds: [],
   },
   zuruzuru: {
-    url: 'https://zuruzurura.men/rss.xml',
+    url: 'https://zuruzurura.men',
+    feedPath: '/rss.xml',
     feeds: [],
   },
   zenn: {
-    url: 'https://zenn.dev/yagijin/feed',
+    url: 'https://zenn.dev/yagijin',
+    feedPath: '/feed',
     feeds: [],
   },
 }
@@ -39,7 +43,8 @@ export default async function getFeed(feed: FeedKey): Promise<FeedWithURL> {
       item: ['media:thumbnail'],
     },
   })
-  await parser.parseURL(data[feed].url).then((target) => {
+  const url = data[feed].url + data[feed].feedPath
+  await parser.parseURL(url).then((target) => {
     data[feed].feeds = target.items.map((item) => {
       return { ...item, type: feed }
     })

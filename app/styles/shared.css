@@ -1,0 +1,61 @@
+
+:root {
+  /* base colors */
+  --grey: #595959ff;
+  --light-grey: #a0aab2ff;
+  --black: #202020ff;
+  --white: #f7f7f7;
+  --beige: #f2e9dcff;
+  --navy: #22333bff;
+  --red: #ecb6b6ff;
+  --rose: #f08c8cff;
+  --dark-red: #440d0fff;
+  /* color system */
+  --primary: #698474ff;
+  --secondary: #808f85ff;
+  --accent: #cfd11aff;
+  /* other colors */
+  --background-card: #ededed;
+  --border-line: #e8e6e6;
+}
+
+body {
+  margin: 2rem;
+  background-color: var(--white);
+  font-family: 'system-ui', sans-serif;
+}
+
+a:not(.not-default) {
+  text-decoration: none;
+  word-break: break-all;
+
+  &:link {
+    color: var(--primary);
+  }
+
+  &:visited {
+    color: var(--primary);
+  }
+
+  &:hover {
+    color: var(--red);
+    text-decoration: underline dotted;
+  }
+
+  &:active {
+    color: var(--primary);
+  }
+}
+
+.unstyledLink:not(.not-default) {
+  text-decoration: none;
+  word-break: break-all;
+
+  &:link, &:visited, &:hover, &:active {
+    color: var(--black);
+  }
+}
+
+.highlightBackground {
+  background: linear-gradient(transparent 70%,#cfd11a 0)
+}
